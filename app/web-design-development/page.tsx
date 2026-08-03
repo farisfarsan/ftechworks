@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Web Design & Development — Ftechworks",
+  title: "Web Design & Development",
   description:
     "Full-stack web apps, dashboards and business websites — engineered for speed, clarity and conversion, from first line of code to launch day.",
+  alternates: { canonical: "/web-design-development" },
 };
 
 export default function WebDesignDevelopmentPage() {

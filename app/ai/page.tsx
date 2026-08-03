@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "AI & Intelligent Systems — Ftechworks",
+  title: "AI & Intelligent Systems",
   description:
     "Chatbots, document processing and AI-powered features — practical AI shipped into real products, trained on your own data.",
+  alternates: { canonical: "/ai" },
 };
 
 export default function AiPage() {

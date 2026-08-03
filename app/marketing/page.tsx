@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Marketing — Ftechworks",
+  title: "Marketing",
   description:
     "SEO optimisation and digital marketing campaigns built on data — more visibility, more qualified traffic, more return on every dollar spent.",
+  alternates: { canonical: "/marketing" },
 };
 
 export default function MarketingPage() {

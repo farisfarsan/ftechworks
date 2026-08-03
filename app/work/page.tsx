@@ -9,9 +9,10 @@ import RippleLink from "@/components/RippleLink";
 const TILT = { x: 10, y: -8 };
 
 export const metadata: Metadata = {
-  title: "Work — Ftechworks",
+  title: "Work",
   description:
     "Real systems, built to solve real problems — from solo founders to enterprise clients worldwide.",
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkPage() {

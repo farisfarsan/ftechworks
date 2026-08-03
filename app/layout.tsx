@@ -5,12 +5,30 @@ import ProgressBar from "@/components/ProgressBar";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/siteConfig";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ftechworks — Technology for Business Growth",
-  description:
-    "Ftechworks builds high-performance backends, full-stack web apps, cross-platform mobile apps and AI-powered products.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — Technology for Business Growth`,
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — Technology for Business Growth`,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Technology for Business Growth`,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -24,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         <ThemeScript />
+        <JsonLd />
       </head>
       <body>
         <CustomCursor />

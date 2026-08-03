@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Branding & Logo Design — Ftechworks",
+  title: "Branding & Logo Design",
   description:
     "Brand strategy and full identity design, built to hold up everywhere your business shows up — positioning, logo, colour system, packaging and signage.",
+  alternates: { canonical: "/branding" },
 };
 
 export default function BrandingPage() {

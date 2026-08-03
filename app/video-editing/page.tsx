@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Video Editing — Ftechworks",
+  title: "Video Editing",
   description:
     "Professional video editing and motion design — promos, ads and social content polished enough to stop the scroll.",
+  alternates: { canonical: "/video-editing" },
 };
 
 export default function VideoEditingPage() {
