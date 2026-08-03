@@ -322,6 +322,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3)
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 @keyframes march{to{transform:translateX(-50%)}}
 @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(22px,-32px)}}
+@keyframes ripple{to{transform:scale(2.5);opacity:0}}
 
 /* RESPONSIVE */
 @media(max-width:1080px){
