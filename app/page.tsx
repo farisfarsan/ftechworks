@@ -3,6 +3,7 @@ import Counter from "@/components/Counter";
 import InquiryForm from "@/components/InquiryForm";
 import RippleLink from "@/components/RippleLink";
 import TiltCard from "@/components/TiltCard";
+import SocialRail from "@/components/SocialRail";
 
 const MQ_ITEMS = [
   "API Development",
@@ -103,6 +104,10 @@ export default function Home() {
           <div className="stars"></div>
         </div>
         <div className="hero-inner">
+          <div className="badge">
+            <span className="pulse"></span>
+            Available for New Projects
+          </div>
           <h1>
             Technology that drives
             <br />
@@ -135,6 +140,11 @@ export default function Home() {
               <div className="stat-l">Services Offered</div>
             </div>
           </div>
+        </div>
+        <SocialRail />
+        <div className="scroll-ind">
+          Scroll
+          <span>↓</span>
         </div>
       </section>
 
