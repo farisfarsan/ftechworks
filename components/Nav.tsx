@@ -98,7 +98,7 @@ export default function Nav() {
       {/* NAV */}
       <nav id="nav" className={scrolled ? "scrolled" : ""}>
         <Link href="/" className="logo-a">
-          <Image src="/logo-crop.png" alt="Ftechworks" width={120} height={26} className="logo-img" priority />
+          <Image src="/logo-crop.png" alt="Ftechworks" width={171} height={26} className="logo-img" priority />
         </Link>
         <ul className="nav-links" id="navLinks">
           <li>
