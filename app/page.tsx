@@ -100,6 +100,7 @@ export default function Home() {
           </video>
           <div className="orb orb1"></div>
           <div className="orb orb2"></div>
+          <div className="stars"></div>
         </div>
         <div className="hero-inner">
           <h1>
@@ -204,7 +205,7 @@ export default function Home() {
           </div>
           <h2 className="sh" style={{ fontSize: "clamp(32px,5.5vw,72px)" }}>
             We build with{" "}
-            <em style={{ color: "var(--accent)", fontStyle: "normal" }}>velocity,</em>
+            <em style={{ color: "var(--accent)", fontStyle: "italic" }}>velocity,</em>
             <br />
             not just speed.
           </h2>
@@ -297,7 +298,7 @@ export default function Home() {
             Built to Last
           </div>
           <h2 className="sh" style={{ fontSize: "clamp(28px,4.2vw,54px)" }}>
-            Clean code. <em style={{ color: "var(--accent)", fontStyle: "normal" }}>Real systems.</em>
+            Clean code. <em style={{ color: "var(--accent)", fontStyle: "italic" }}>Real systems.</em>
           </h2>
           <p style={{ fontSize: 15, color: "var(--ink2)", marginTop: 16, lineHeight: 1.84 }}>
             Every project ships with full documentation, unit tests and a deployment guide — so
@@ -319,7 +320,7 @@ export default function Home() {
             <h2 className="sh">
               Let&apos;s build something
               <br />
-              <em style={{ color: "var(--accent)", fontStyle: "normal" }}>remarkable.</em>
+              <em style={{ color: "var(--accent)", fontStyle: "italic" }}>remarkable.</em>
             </h2>
             <p style={{ fontSize: 15, color: "var(--ink2)", lineHeight: 1.84, marginTop: 12 }}>
               Have an idea or a question? Reach out directly — we reply within 12 hours, no
