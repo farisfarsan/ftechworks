@@ -32,7 +32,7 @@ export default function Footer() {
     <footer>
       <div className="footer-in">
         <div className="footer-col footer-brand">
-          <Image src="/logo-crop.png" alt="Ftechworks" width={171} height={26} className="logo-img" />
+          <Image src="/logo.png" alt="Ftechworks" width={211} height={26} className="logo-img" />
           <p>Technology for Business Growth — full-stack web, mobile, and AI-powered products.</p>
           <div className="footer-socials">
             {SOCIALS.map((s) => (

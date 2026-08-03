@@ -7,8 +7,8 @@ export default function JsonLd() {
     name: SITE_NAME,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    logo: `${SITE_URL}/logo-crop.png`,
-    image: `${SITE_URL}/logo-crop.png`,
+    logo: `${SITE_URL}/logo.png`,
+    image: `${SITE_URL}/logo.png`,
     email: "ftechworks8@gmail.com",
     areaServed: "Worldwide",
     sameAs: [
