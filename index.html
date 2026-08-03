@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem("gpy-t");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ftechworks — Technology for Business Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="pgbar"></div>
+<a href="#" id="btt" aria-label="Back to top">↑</a>
+<a href="https://wa.me/919061894005?text=Hi%20Team%20Ftechworks%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" id="waFloat" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.297.297-.496.099-.198.05-.371-.025-.52-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.148.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.194 1.871.118.571-.085 1.758-.72 2.006-1.414.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.243c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.867zm8.413-18.281A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.87 11.87 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.393z"/></svg></a>
+
+<!-- MOB MENU -->
+<div class="mob" id="mob">
+  <button class="mob-x" onclick="closeMob()">✕</button>
+  <a href="#why" class="mob-lnk" onclick="closeMob()">Why Us</a>
+  <a href="web-design-development.html" class="mob-lnk" onclick="closeMob()">Web Design &amp; Dev</a>
+  <a href="ai.html" class="mob-lnk" onclick="closeMob()">AI</a>
+  <a href="uiux-app.html" class="mob-lnk" onclick="closeMob()">UI/UX &amp; App</a>
+  <a href="branding.html" class="mob-lnk" onclick="closeMob()">Branding</a>
+  <a href="marketing.html" class="mob-lnk" onclick="closeMob()">Marketing</a>
+  <a href="video-editing.html" class="mob-lnk" onclick="closeMob()">Video Editing</a>
+  <a href="work.html" class="mob-lnk" onclick="closeMob()">Work</a>
+  <a href="#process" class="mob-lnk" onclick="closeMob()">Process</a>
+  <a href="#contact" class="mob-lnk" onclick="closeMob()">Contact</a>
+  <div class="mob-cta-wrap"><a href="#contact" class="mob-cta" onclick="closeMob()">Start a Project →</a></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo-a">
+    <img src="logo-crop.png" alt="Ftechworks" class="logo-img">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#why">Why Us</a></li>
+    <li class="nav-drop">
+      <a href="#services" class="nav-drop-toggle">Services <span class="nav-caret">▾</span></a>
+      <ul class="nav-dropdown">
+        <li><a href="web-design-development.html">Web Design &amp; Dev</a></li>
+        <li><a href="ai.html">AI</a></li>
+        <li><a href="uiux-app.html">UI/UX &amp; App</a></li>
+        <li><a href="branding.html">Branding</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="video-editing.html">Video Editing</a></li>
+      </ul>
+    </li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="thbtn" onclick="toggleTheme()" title="Toggle theme">
+      <span class="tico moon">🌙</span>
+      <span class="tico sun">☀️</span>
+    </button>
+    <a href="#contact" class="hire-btn">Start a Project</a>
+    <button class="burger" id="burger" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline><source src="https://videos.pexels.com/video-files/3141208/3141208-uhd_2560_1440_25fps.mp4" type="video/mp4"></video>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+  <div class="hero-inner">
+    <h1>Technology that drives<br>real <em>business growth.</em></h1>
+    <p class="hero-desc">Ftechworks builds high-performance backends, full-stack web apps, cross-platform mobile apps and AI-powered products — clean architecture, tested code, delivered on time.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-solid">Explore Services</a>
+      <a href="#contact" class="btn-ghost">Start a Project →</a>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n" data-count="2" data-suffix="+">3+</div><div class="stat-l">Years in Production</div></div>
+      <div class="stat"><div class="stat-n">Team</div><div class="stat-l">Experienced Devs</div></div>
+      <div class="stat"><div class="stat-n" data-count="14" data-suffix="">14</div><div class="stat-l">Services Offered</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mq-track">
+    <span class="mq-item">API Development</span><span class="mq-item">Web Applications</span><span class="mq-item">Mobile Apps</span><span class="mq-item">AI Chatbots</span><span class="mq-item">Python Automation</span><span class="mq-item">Web Scraping</span><span class="mq-item">AI Document Processing</span><span class="mq-item">Website Design &amp; Build</span><span class="mq-item">AI-Powered Features</span><span class="mq-item">API Development</span><span class="mq-item">Web Applications</span><span class="mq-item">Mobile Apps</span><span class="mq-item">AI Chatbots</span><span class="mq-item">Python Automation</span><span class="mq-item">Web Scraping</span><span class="mq-item">AI Document Processing</span><span class="mq-item">Website Design &amp; Build</span><span class="mq-item">AI-Powered Features</span>
+  </div>
+</div>
+
+<!-- WHY -->
+<section class="sec" id="why">
+  <div class="sec-in">
+    <div class="r"><div class="ey">Why Ftechworks</div><h2 class="sh">The honest difference.</h2><p class="ssub">Most freelancers write code. Ftechworks engineers products. Here's the gap.</p></div>
+    <div class="pso-grid r d1">
+      <div class="pso prob"><div class="pso-bar"></div><div class="pso-tag">Problem</div><h4>You have a vision but no technical partner to build it right.</h4><p>Great ideas die waiting for developers who miss deadlines or deliver code that can't scale past launch day. You need someone who actually delivers.</p></div>
+      <div class="pso soln"><div class="pso-bar"></div><div class="pso-tag">Solution</div><h4>We validate, architect, and ship — fast, clean, production-ready.</h4><p>Two years building distributed systems at a fintech startup taught us how to move quickly without cutting corners. Every line of code is intentional.</p></div>
+      <div class="pso outc"><div class="pso-bar"></div><div class="pso-tag">Outcome</div><h4>A working product you can demo, launch, or scale from day one.</h4><p>Not a prototype. A real system — tested, documented, deployed, and ready for users. Backed by two weeks of post-launch support at no extra charge.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO BREAK 1 -->
+<div class="vid-sec">
+  <video autoplay muted loop playsinline><source src="https://videos.pexels.com/video-files/3130284/3130284-uhd_2560_1440_25fps.mp4" type="video/mp4"></video>
+  <div class="vid-inner r">
+    <div class="ey" style="justify-content:center">Our Philosophy</div>
+    <h2 class="sh" style="font-size:clamp(32px,5.5vw,72px)">We build with <em style="color:var(--accent);font-style:normal">velocity,</em><br>not just speed.</h2>
+    <p style="font-size:16px;color:var(--ink2);margin-top:18px;line-height:1.84;max-width:520px;margin-left:auto;margin-right:auto">Moving fast without direction is just chaos. We ship leverage — every decision is backed by strategy, every line of code has purpose.</p>
+  </div>
+</div>
+
+<!-- SERVICES OVERVIEW -->
+<section class="sec sec-alt" id="services">
+  <div class="sec-in">
+    <div class="r">
+      <div class="ey">What We Build</div>
+      <h2 class="sh">Services</h2>
+      <p class="ssub">End-to-end engineering across web, mobile, AI &amp; delivery — explore each specialisation in detail.</p>
+    </div>
+    <div class="svc-grid r d1">
+      <a href="web-design-development.html" class="svc-card svc-teaser">
+        <div class="svc-ico">🌐</div>
+        <h3>Web Design &amp; Development</h3>
+        <p>Full-stack web apps, admin dashboards and business websites built to convert visitors into clients.</p>
+        <div class="svc-teaser-link">Explore <span>→</span></div>
+      </a>
+      <a href="uiux-app.html" class="svc-card svc-teaser">
+        <div class="svc-ico">📱</div>
+        <h3>UI/UX &amp; App</h3>
+        <p>Cross-platform mobile apps, UI/UX design and full end-to-end MVP builds, from idea to live product.</p>
+        <div class="svc-teaser-link">Explore <span>→</span></div>
+      </a>
+      <a href="ai.html" class="svc-card svc-teaser">
+        <div class="svc-ico">🤖</div>
+        <h3>AI &amp; Intelligent Systems</h3>
+        <p>Chatbots, document processing and AI-powered features trained on your data.</p>
+        <div class="svc-teaser-link">Explore <span>→</span></div>
+      </a>
+      <a href="branding.html" class="svc-card svc-teaser">
+        <div class="svc-ico">🎨</div>
+        <h3>Branding &amp; Logo Design</h3>
+        <p>Brand strategy and full identity design — logo, colour system, packaging and signage.</p>
+        <div class="svc-teaser-link">Explore <span>→</span></div>
+      </a>
+      <a href="marketing.html" class="svc-card svc-teaser">
+        <div class="svc-ico">📈</div>
+        <h3>Marketing</h3>
+        <p>SEO optimisation and digital marketing campaigns that grow your reach and ROI.</p>
+        <div class="svc-teaser-link">Explore <span>→</span></div>
+      </a>
+      <a href="video-editing.html" class="svc-card svc-teaser">
+        <div class="svc-ico">🎬</div>
+        <h3>Video Editing</h3>
+        <p>Video editing and motion graphics — promos and social content polished enough to stop the scroll.</p>
+        <div class="svc-teaser-link">Explore <span>→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <div class="sec-in">
+    <div class="r">
+      <div class="ey">How We Work</div>
+      <h2 class="sh">Your roadmap to shipping.</h2>
+      <p class="ssub">Four clear steps built to protect your time, money and vision — from first call to launch day and beyond.</p>
+    </div>
+    <div class="proc-flow r d1">
+
+      <!-- Step 1 -->
+      <div class="pstep">
+        <div class="pstep-head">
+          <div class="pstep-icon">🔍</div>
+          <div class="p-num">01</div>
+        </div>
+        <h4>Discover</h4>
+        <p class="pstep-desc">A free 30-minute strategy call where we dig deep into your idea, goals, and constraints — honest technical advice, no sales pitch.</p>
+        <div class="chips"><span class="chip">Free Strategy Call</span><span class="chip">Idea Validation</span><span class="chip">Market Research</span></div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="pstep">
+        <div class="pstep-head">
+          <div class="pstep-icon">📋</div>
+          <div class="p-num">02</div>
+        </div>
+        <h4>Strategise</h4>
+        <p class="pstep-desc">Within 24 hours you receive a written proposal — fixed scope, fixed price, fixed timeline. No vague estimates, no billing surprises.</p>
+        <div class="chips"><span class="chip">Fixed Scope</span><span class="chip">Tech Architecture</span><span class="chip">MoSCoW</span></div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="pstep">
+        <div class="pstep-head">
+          <div class="pstep-icon">⚡</div>
+          <div class="p-num">03</div>
+        </div>
+        <h4>Build</h4>
+        <p class="pstep-desc">We build iteratively with daily updates — AI-assisted development means 2× the velocity without sacrificing quality or test coverage.</p>
+        <div class="chips"><span class="chip">2× Velocity</span><span class="chip">AI-Assisted</span><span class="chip">Daily Updates</span><span class="chip">Test Coverage</span></div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="pstep">
+        <div class="pstep-head">
+          <div class="pstep-icon">🚀</div>
+          <div class="p-num">04</div>
+        </div>
+        <h4>Deliver</h4>
+        <p class="pstep-desc">Full handoff — deployed, documented, and yours. Two weeks of post-launch support included, at no extra charge.</p>
+        <div class="chips"><span class="chip">Deployment</span><span class="chip">2-Week Support</span><span class="chip">Full Docs</span><span class="chip">Handoff Guide</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO BREAK 2 -->
+<div class="vid-sec" style="min-height:370px">
+  <video autoplay muted loop playsinline><source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4"></video>
+  <div class="vid-inner r">
+    <div class="ey" style="justify-content:center">Built to Last</div>
+    <h2 class="sh" style="font-size:clamp(28px,4.2vw,54px)">Clean code. <em style="color:var(--accent);font-style:normal">Real systems.</em></h2>
+    <p style="font-size:15px;color:var(--ink2);margin-top:16px;line-height:1.84">Every project ships with full documentation, unit tests and a deployment guide — so you're never left in the dark.</p>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="sec-in">
+    <div class="r" style="text-align:center;max-width:660px;margin:0 auto 54px">
+      <div class="ey" style="justify-content:center">Get In Touch</div>
+      <h2 class="sh">Let's build something<br><em style="color:var(--accent);font-style:normal">remarkable.</em></h2>
+      <p style="font-size:15px;color:var(--ink2);line-height:1.84;margin-top:12px">Have an idea or a question? Reach out directly — we reply within 12 hours, no fluff, just honest advice and a clear plan.</p>
+    </div>
+    <div class="r d1">
+      <form class="c-form" id="inquiryForm">
+        <div class="c-form-row">
+          <div class="c-field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" placeholder="Your name" required></div>
+          <div class="c-field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" placeholder="you@company.com" required></div>
+        </div>
+        <div class="c-form-row">
+          <div class="c-field"><label for="cf-phone">Phone (optional)</label><input id="cf-phone" name="phone" type="tel" placeholder="+1 234 567 8900"></div>
+          <div class="c-field">
+            <label for="cf-service">Service</label>
+            <select id="cf-service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Web App Development</option>
+              <option>Mobile App Development</option>
+              <option>Website Design &amp; Build</option>
+              <option>AI Chatbot Integration</option>
+              <option>AI Document Processing</option>
+              <option>AI-Powered Features</option>
+              <option>MVP Build (End-to-End)</option>
+              <option>Branding &amp; Logo Design</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="c-field">
+          <label for="cf-budget">Expected budget</label>
+          <select id="cf-budget" name="budget" required>
+            <option value="" disabled selected>Select a range</option>
+            <option>Under $1,000</option>
+            <option>$1,000 – $5,000</option>
+            <option>$5,000 – $15,000</option>
+            <option>$15,000+</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="c-field"><label for="cf-message">Tell us about your project</label><textarea id="cf-message" name="message" placeholder="What are you trying to build?" required></textarea></div>
+        <button type="submit" class="c-form-submit">Send Inquiry via WhatsApp <span>→</span></button>
+      </form>
+    </div>
+    <div class="c-simple r d2">
+      <p class="c-alt-label">Prefer email or social? Reach us directly:</p>
+      <div class="c-links">
+        <a href="mailto:ftechworks8@gmail.com" class="c-link" aria-label="Email"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67z"/><path fill="currentColor" d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908z"/></svg></a>
+        <a href="https://wa.me/919061894005?text=Hi%20Team%20Ftechworks%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="c-link" aria-label="WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.297.297-.496.099-.198.05-.371-.025-.52-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.148.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.194 1.871.118.571-.085 1.758-.72 2.006-1.414.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.243c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.867zm8.413-18.281A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.87 11.87 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.393z"/></svg></a>
+        <a href="https://www.linkedin.com/company/135145399/" target="_blank" rel="noopener" class="c-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://www.instagram.com/_ftechworks_?igsh=MTg4dHBpMWphbDQ1dg==" target="_blank" rel="noopener" class="c-link" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 9.837a3.836 3.836 0 1 1 0-7.673 3.836 3.836 0 0 1 0 7.673zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      </div>
+    </div>
+    <div class="perks r d3">
+      <div class="perk"><span class="perk-dot"></span>Replies within 12 hours</div>
+      <div class="perk"><span class="perk-dot"></span>Fixed scope &amp; price, no hidden fees</div>
+      <div class="perk"><span class="perk-dot"></span>2-week post-launch support included</div>
+      <div class="perk"><span class="perk-dot"></span>Available to clients worldwide</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:9px">
+    <img src="logo-crop.png" alt="Ftechworks" class="logo-img" style="height:20px">
+  </div>
+  <p>© 2025 Ftechworks · Technology for Business Growth</p>
+  <p>Available Worldwide</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

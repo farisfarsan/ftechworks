@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem("gpy-t");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Editing — Ftechworks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="pgbar"></div>
+<a href="#" id="btt" aria-label="Back to top">↑</a>
+<a href="https://wa.me/919061894005?text=Hi%20Team%20Ftechworks%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" id="waFloat" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.297.297-.496.099-.198.05-.371-.025-.52-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.148.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.194 1.871.118.571-.085 1.758-.72 2.006-1.414.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.243c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.867zm8.413-18.281A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.87 11.87 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.393z"/></svg></a>
+
+<!-- MOB MENU -->
+<div class="mob" id="mob">
+  <button class="mob-x" onclick="closeMob()">✕</button>
+  <a href="index.html#why" class="mob-lnk" onclick="closeMob()">Why Us</a>
+  <a href="web-design-development.html" class="mob-lnk" onclick="closeMob()">Web Design &amp; Dev</a>
+  <a href="ai.html" class="mob-lnk" onclick="closeMob()">AI</a>
+  <a href="uiux-app.html" class="mob-lnk" onclick="closeMob()">UI/UX &amp; App</a>
+  <a href="branding.html" class="mob-lnk" onclick="closeMob()">Branding</a>
+  <a href="marketing.html" class="mob-lnk" onclick="closeMob()">Marketing</a>
+  <a href="video-editing.html" class="mob-lnk" onclick="closeMob()">Video Editing</a>
+  <a href="work.html" class="mob-lnk" onclick="closeMob()">Work</a>
+  <a href="index.html#process" class="mob-lnk" onclick="closeMob()">Process</a>
+  <a href="index.html#contact" class="mob-lnk" onclick="closeMob()">Contact</a>
+  <div class="mob-cta-wrap"><a href="index.html#contact" class="mob-cta" onclick="closeMob()">Start a Project →</a></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo-a">
+    <img src="logo-crop.png" alt="Ftechworks" class="logo-img">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#why">Why Us</a></li>
+    <li class="nav-drop">
+      <a href="index.html#services" class="nav-drop-toggle">Services <span class="nav-caret">▾</span></a>
+      <ul class="nav-dropdown">
+        <li><a href="web-design-development.html">Web Design &amp; Dev</a></li>
+        <li><a href="ai.html">AI</a></li>
+        <li><a href="uiux-app.html">UI/UX &amp; App</a></li>
+        <li><a href="branding.html">Branding</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="video-editing.html">Video Editing</a></li>
+      </ul>
+    </li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="index.html#process">Process</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="thbtn" onclick="toggleTheme()" title="Toggle theme">
+      <span class="tico moon">🌙</span>
+      <span class="tico sun">☀️</span>
+    </button>
+    <a href="index.html#contact" class="hire-btn">Start a Project</a>
+    <button class="burger" id="burger" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="sec" style="padding-top:150px;padding-bottom:60px">
+  <div class="sec-in">
+    <div class="r">
+      <a href="index.html" class="back-lnk">← Back to Home</a>
+      <div class="ey">Video Editing</div>
+      <h1 class="sh">Footage, cut into stories.</h1>
+      <p class="ssub" style="margin-bottom:0">Professional video editing and motion design — promos, ads and social content polished enough to stop the scroll.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO EDITING -->
+<section class="sec sec-alt">
+  <div class="sec-in">
+    <div class="r">
+      <div class="ey">Service</div>
+      <h2 class="sh">Video Editing</h2>
+      <p class="ssub">Polished cuts, colour grading and sound design for promos, ads and social content — delivered fast, in the formats you need.</p>
+      <div class="svc-tags"><span class="svc-tag">Colour Grading</span><span class="svc-tag">Sound Design</span><span class="svc-tag">Multi-Format Export</span><span class="svc-tag">Fast Turnaround</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTION GRAPHICS & ANIMATION -->
+<section class="sec">
+  <div class="sec-in">
+    <div class="r">
+      <div class="ey">Service</div>
+      <h2 class="sh">Motion Graphics &amp; Animation</h2>
+      <p class="ssub">Animated explainers, kinetic typography and branded motion graphics that bring your story to life.</p>
+      <div class="svc-tags"><span class="svc-tag">After Effects</span><span class="svc-tag">2D Animation</span><span class="svc-tag">Kinetic Typography</span><span class="svc-tag">Explainer Videos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec sec-alt">
+  <div class="sec-in">
+    <div class="cta-band r">
+      <h3>Have footage that needs a story?</h3>
+      <p>Tell us what you're building — we reply within 12 hours with honest advice and a clear plan.</p>
+      <div class="cta-band-btns">
+        <a href="index.html#contact" class="btn-solid">Start a Project →</a>
+        <a href="index.html" class="btn-ghost">See all Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:9px">
+    <img src="logo-crop.png" alt="Ftechworks" class="logo-img" style="height:20px">
+  </div>
+  <p>© 2025 Ftechworks · Technology for Business Growth</p>
+  <p>Available Worldwide</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
