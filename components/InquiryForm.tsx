@@ -16,7 +16,6 @@ export default function InquiryForm() {
       `Email: ${f.get("email")}`,
       `Phone: ${f.get("phone") || "—"}`,
       `Service: ${f.get("service")}`,
-      `Budget: ${f.get("budget")}`,
       "",
       "Project details:",
       String(f.get("message") ?? ""),
@@ -60,19 +59,6 @@ export default function InquiryForm() {
             <option>Not sure yet</option>
           </select>
         </div>
-      </div>
-      <div className="c-field">
-        <label htmlFor="cf-budget">Expected budget</label>
-        <select id="cf-budget" name="budget" defaultValue="" required>
-          <option value="" disabled>
-            Select a range
-          </option>
-          <option>Under $1,000</option>
-          <option>$1,000 – $5,000</option>
-          <option>$5,000 – $15,000</option>
-          <option>$15,000+</option>
-          <option>Not sure yet</option>
-        </select>
       </div>
       <div className="c-field">
         <label htmlFor="cf-message">Tell us about your project</label>
