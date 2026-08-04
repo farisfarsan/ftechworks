@@ -3,7 +3,6 @@ import Counter from "@/components/Counter";
 import RippleLink from "@/components/RippleLink";
 import TiltCard from "@/components/TiltCard";
 import SocialRail from "@/components/SocialRail";
-import RotatingText from "@/components/RotatingText";
 import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
 
@@ -22,15 +21,6 @@ const MQ_ITEMS = [
   "Website Design & Build",
   "MVP Builds",
   "API Development",
-];
-
-const ROTATING_SERVICES = [
-  "web apps",
-  "mobile apps",
-  "AI systems",
-  "brand identities",
-  "growth campaigns",
-  "video content",
 ];
 
 const SERVICE_TEASERS = [
@@ -118,14 +108,13 @@ export default function Home() {
             Available for New Projects
           </div>
           <h1>
-            Technology that drives
+            We build digital solutions
             <br />
-            real <em>business growth.</em>
+            that <em>scale your business.</em>
           </h1>
-          <RotatingText items={ROTATING_SERVICES} />
           <p className="hero-desc">
-            We ship production systems, not prototypes — tested, documented, and priced before we
-            start.
+            From websites and web apps to AI automation, marketing, design and video —
+            production-ready work, built to help you grow faster.
           </p>
           <div className="hero-btns">
             <RippleLink href="#services" className="btn-solid">

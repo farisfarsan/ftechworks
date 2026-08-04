@@ -112,7 +112,7 @@ nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.28)}
 [data-theme="light"] .orb{opacity:.08}
 .orb1{width:500px;height:500px;background:radial-gradient(var(--accent),transparent 70%);top:-120px;left:-140px;animation-delay:0s}
 .orb2{width:380px;height:380px;background:radial-gradient(rgba(var(--accentRgb),.65),transparent 70%);bottom:-80px;right:-100px;animation-delay:-4.5s}
-.hero-inner{position:relative;z-index:2;max-width:1120px;margin:0 auto}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto}
 /* rotating service line */
 .hero-rot{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:clamp(12.5px,1.4vw,15px);letter-spacing:.02em;margin-bottom:28px;animation:fadeUp .8s ease .18s both}
 .hero-rot-label{color:var(--ink3)}
