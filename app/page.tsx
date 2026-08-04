@@ -108,9 +108,9 @@ export default function Home() {
             Available for New Projects
           </div>
           <h1>
-            We build digital solutions
+            We build it, brand it,
             <br />
-            that <em>scale your business.</em>
+            and <em>take it to market.</em>
           </h1>
           <p className="hero-desc">
             From websites and web apps to AI automation, marketing, design and video —

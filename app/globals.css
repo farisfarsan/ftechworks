@@ -130,7 +130,10 @@ nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.28)}
 @media(max-width:1080px){.social-rail{display:none}}
 .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(var(--accentRgb),.08);border:1px solid rgba(var(--accentRgb),.25);padding:7px 20px;border-radius:99px;margin-bottom:40px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;animation:fadeUp .8s ease .05s both}
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--grn);box-shadow:0 0 10px var(--grn);animation:blink 2s ease-in-out infinite;flex-shrink:0}
-.hero h1{font-family:'Sora',sans-serif;font-size:clamp(40px,6.9vw,94px);font-weight:600;line-height:1.04;letter-spacing:-.03em;color:var(--ink);margin-bottom:22px;text-wrap:balance;animation:fadeUp .8s ease .14s both}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(40px,6.9vw,94px);font-weight:600;line-height:.99;letter-spacing:-.036em;color:var(--ink);margin-bottom:26px;text-wrap:balance;font-kerning:normal;font-feature-settings:"kern" 1,"liga" 1;animation:fadeUp .8s ease .14s both}
+/* Sora ships no italic face, so the accent is a browser-synthesised oblique.
+   Nudge the tracking back out — the skew tightens apparent letter spacing. */
+.hero h1 em{letter-spacing:-.03em;padding-right:.06em}
 .hero h1 em{font-style:italic;font-weight:500;color:var(--accent);text-shadow:0 0 34px rgba(var(--accentRgb),.4)}
 .stars{position:absolute;inset:0;pointer-events:none;
   background-image:
