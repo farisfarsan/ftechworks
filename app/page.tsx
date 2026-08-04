@@ -124,8 +124,8 @@ export default function Home() {
           </h1>
           <RotatingText items={ROTATING_SERVICES} />
           <p className="hero-desc">
-            We design, engineer and ship digital products end to end — one team from the first
-            wireframe to launch day, and the two weeks after it.
+            We ship production systems, not prototypes — tested, documented, and priced before we
+            start.
           </p>
           <div className="hero-btns">
             <RippleLink href="#services" className="btn-solid">
