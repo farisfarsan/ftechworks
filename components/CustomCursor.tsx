@@ -7,6 +7,8 @@ export default function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.innerWidth <= 768) return;
+
     let mx = window.innerWidth / 2;
     let my = window.innerHeight / 2;
     let rx = mx;

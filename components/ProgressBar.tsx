@@ -7,12 +7,19 @@ export default function ProgressBar() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    function onScroll() {
+    let ticking = false;
+    function update() {
       const max = document.body.scrollHeight - window.innerHeight;
       setPct(max > 0 ? (window.scrollY / max) * 100 : 0);
       setShow(window.scrollY > 400);
+      ticking = false;
     }
-    onScroll();
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

@@ -27,20 +27,28 @@ export default function Nav() {
   const [mobOpen, setMobOpen] = useState(false);
 
   useEffect(() => {
-    function onScroll() {
+    let ticking = false;
+    function update() {
       setScrolled(window.scrollY > 40);
-      if (!isHome) return;
-      let cur = "home";
-      SPY_IDS.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) cur = id;
-      });
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
-        cur = SPY_IDS[SPY_IDS.length - 1];
+      if (isHome) {
+        let cur = "home";
+        SPY_IDS.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el && window.scrollY >= el.offsetTop - 120) cur = id;
+        });
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+          cur = SPY_IDS[SPY_IDS.length - 1];
+        }
+        setActive(cur);
       }
-      setActive(cur);
+      ticking = false;
     }
-    onScroll();
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
