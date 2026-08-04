@@ -52,6 +52,14 @@ export default function UiuxAppPage() {
           q: "How long does an MVP take?",
           a: "Typically 4–8 weeks from idea to live product. We scope the core features, cut everything that isn't essential to proving the idea, and ship something real users can try.",
         },
+        {
+          q: "Do you build for both iOS and Android?",
+          a: "Yes — apps are cross-platform, built once with Flutter or React Native and Expo so a single codebase runs on both, including push notifications and offline support.",
+        },
+        {
+          q: "Is design included, or do I need a separate designer?",
+          a: "Design is included. We handle user research, wireframes and interactive prototypes in Figma before production code starts, so the UI/UX and the build come from the same team.",
+        },
         ...BASE_FAQS,
       ]}
       ctaTitle="Got an app idea?"

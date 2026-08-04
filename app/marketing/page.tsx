@@ -51,7 +51,21 @@ export default function MarketingPage() {
         "Email Marketing",
       ]}
       stackTitle="Channels & Capabilities"
-      faqs={BASE_FAQS}
+      faqs={[
+        {
+          q: "What does your SEO work actually cover?",
+          a: "Keyword research and search intent mapping, on-page optimisation, and technical SEO audits and fixes — backed by analytics so rankings and organic traffic are measured rather than assumed.",
+        },
+        {
+          q: "Which channels do you run campaigns on?",
+          a: "Targeted paid ad campaigns, social media, and email marketing — chosen based on where your audience actually is rather than running all of them by default.",
+        },
+        {
+          q: "How will I know if it's working?",
+          a: "We set up analytics and performance tracking at the start, then report on reach, traffic and ROI — so you can see which channels return on the spend.",
+        },
+        ...BASE_FAQS,
+      ]}
       ctaTitle="Want more traffic and leads?"
       ctaBody="Tell us what you're building — we reply within 12 hours with honest advice and a clear plan."
     />

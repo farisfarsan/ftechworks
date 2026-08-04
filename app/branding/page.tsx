@@ -51,7 +51,21 @@ export default function BrandingPage() {
         "Signage",
       ]}
       stackTitle="Tools & Deliverables"
-      faqs={BASE_FAQS}
+      faqs={[
+        {
+          q: "What's included in a full brand identity?",
+          a: "Strategy and positioning first, then the logo explored across multiple concepts, a colour palette and a recurring pattern system — pulled together into a complete visual identity and design system.",
+        },
+        {
+          q: "Do you design physical items or just digital files?",
+          a: "Both. We carry the identity onto real packaging like cups and takeaway containers, staff aprons and uniforms, and illuminated shopfront signage — so the brand holds up everywhere the business shows up, not just on a screen.",
+        },
+        {
+          q: "Do we own the final files?",
+          a: "Yes. You get a full handoff and every source file is yours.",
+        },
+        ...BASE_FAQS,
+      ]}
       ctaTitle="Need a brand identity?"
       ctaBody="Tell us what you're building — we reply within 12 hours with honest advice and a clear plan."
     />

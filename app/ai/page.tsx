@@ -63,6 +63,14 @@ export default function AiPage() {
           q: "Will the AI be trained on our own data?",
           a: "Yes. Chatbots are trained on your knowledge base, and document workflows are built around your actual invoices, contracts and reports — so answers reflect your business rather than generic internet knowledge.",
         },
+        {
+          q: "Which AI models do you work with?",
+          a: "We build on OpenAI's models including GPT-4o, and on Claude — chosen per project depending on what the workload needs. Retrieval is handled with RAG over a vector database, with OCR where documents need to be read first.",
+        },
+        {
+          q: "Can it connect to the tools we already use?",
+          a: "Yes. Chatbots support CRM integration and multi-channel deployment, and AI features can be added into an existing app — smart search, content generation, auto-tagging and recommendations — rather than requiring a separate system.",
+        },
         ...BASE_FAQS,
       ]}
       ctaTitle="Want AI in your product?"

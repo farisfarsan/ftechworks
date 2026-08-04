@@ -42,7 +42,21 @@ export default function WebDesignDevelopmentPage() {
         "Two weeks of post-launch support",
       ]}
       stack={["React", "Next.js", "Python", "Database", "Webflow", "Figma", "HTML/CSS"]}
-      faqs={BASE_FAQS}
+      faqs={[
+        {
+          q: "What do you build with?",
+          a: "Web applications are built with a React and Next.js frontend on a Python backend, connected to a database. Business websites and landing pages are built with Webflow, Figma and hand-written HTML/CSS where it gives us more control over performance.",
+        },
+        {
+          q: "Will my site be mobile-friendly and SEO-ready?",
+          a: "Yes to both. Layouts are responsive across desktop, tablet and mobile, and the site is built with an SEO-optimised structure from day one rather than having SEO bolted on afterwards.",
+        },
+        {
+          q: "Can you build internal tools, not just marketing sites?",
+          a: "Yes. Alongside websites and landing pages we build admin dashboards, SaaS tools and internal portals — all production-ready rather than prototypes.",
+        },
+        ...BASE_FAQS,
+      ]}
       ctaTitle="Have a web project in mind?"
       ctaBody="Tell us what you're building — we reply within 12 hours with honest advice and a clear plan."
     />

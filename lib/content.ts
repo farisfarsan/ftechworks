@@ -1,6 +1,8 @@
 // Every answer below restates a commitment already published elsewhere on the
 // site (process steps, perks list, service copy). Don't add timelines, pricing
 // or policies here that aren't stated somewhere else on the site.
+// Shared tail — kept short on purpose. Each service page prepends its own
+// service-specific questions so the six pages aren't near-duplicates.
 export const BASE_FAQS = [
   {
     q: "How do we get started?",
@@ -9,10 +11,6 @@ export const BASE_FAQS = [
   {
     q: "How does pricing work?",
     a: "Scope and price are fixed upfront in the proposal, so there are no vague estimates, no hidden fees and no billing surprises partway through the project.",
-  },
-  {
-    q: "How do you keep me updated during the build?",
-    a: "We build iteratively with daily updates, so you always know where the project stands. AI-assisted development lets us move at roughly 2× the velocity without sacrificing quality or test coverage.",
   },
   {
     q: "What happens after launch?",

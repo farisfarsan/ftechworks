@@ -51,7 +51,21 @@ export default function VideoEditingPage() {
         "Multi-Format Export",
       ]}
       stackTitle="Tools & Capabilities"
-      faqs={BASE_FAQS}
+      faqs={[
+        {
+          q: "What's included in a video edit?",
+          a: "Polished cuts, professional colour grading, and sound design and audio mixing — the full pass on promos, ads and social content rather than just trimming clips together.",
+        },
+        {
+          q: "Do you do animation as well as editing?",
+          a: "Yes. Alongside editing we produce animated explainer videos, kinetic typography and branded motion graphics, built as 2D animation in After Effects.",
+        },
+        {
+          q: "What formats will I receive?",
+          a: "We export in multiple formats and aspect ratios so the same edit is ready for each platform you're posting to, with fast turnaround on delivery.",
+        },
+        ...BASE_FAQS,
+      ]}
       ctaTitle="Have footage that needs a story?"
       ctaBody="Tell us what you're building — we reply within 12 hours with honest advice and a clear plan."
     />
