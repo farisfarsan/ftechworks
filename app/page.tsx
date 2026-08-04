@@ -124,8 +124,8 @@ export default function Home() {
           </h1>
           <RotatingText items={ROTATING_SERVICES} />
           <p className="hero-desc">
-            Full-stack web and mobile apps, AI systems, brand identity, marketing and video —
-            engineered and designed in one place, delivered on time.
+            We design, engineer and ship digital products end to end — one team from the first
+            wireframe to launch day, and the two weeks after it.
           </p>
           <div className="hero-btns">
             <RippleLink href="#services" className="btn-solid">
