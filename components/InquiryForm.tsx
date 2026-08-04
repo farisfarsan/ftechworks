@@ -67,6 +67,9 @@ export default function InquiryForm() {
       <button type="submit" className="c-form-submit" onClick={ripple}>
         Send Inquiry via WhatsApp <span>→</span>
       </button>
+      <p className="c-form-note">
+        Opens WhatsApp with your details filled in — we reply within 12 hours.
+      </p>
     </form>
   );
 }
