@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import RippleLink from "@/components/RippleLink";
-import ProcessTimeline from "@/components/ProcessTimeline";
+import ProcessSection from "@/components/ProcessSection";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
 
 export type ServiceBlock = {
@@ -132,20 +132,10 @@ export default function ServicePageLayout({
       )}
 
       {/* PROCESS */}
-      <section className="sec sec-alt">
-        <div className="sec-in">
-          <Reveal>
-            <div className="ey">How We Work</div>
-            <h2 className="sh2">
-              Your roadmap to <em>shipping.</em>
-            </h2>
-            <p className="ssub">
-              The same four steps on every project — built to protect your time, money and vision.
-            </p>
-          </Reveal>
-          <ProcessTimeline />
-        </div>
-      </section>
+      <ProcessSection
+        className="sec sec-alt"
+        subtitle="The same four steps on every project — built to protect your time, money and vision."
+      />
 
       {/* FAQ */}
       {faqs && faqs.length > 0 && (

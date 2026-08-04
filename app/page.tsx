@@ -4,7 +4,7 @@ import InquiryForm from "@/components/InquiryForm";
 import RippleLink from "@/components/RippleLink";
 import TiltCard from "@/components/TiltCard";
 import SocialRail from "@/components/SocialRail";
-import ProcessTimeline from "@/components/ProcessTimeline";
+import ProcessSection from "@/components/ProcessSection";
 
 const MQ_ITEMS = [
   "API Development",
@@ -238,19 +238,7 @@ export default function Home() {
       </section>
 
       {/* PROCESS */}
-      <section className="sec" id="process">
-        <div className="sec-in">
-          <Reveal>
-            <div className="ey">How We Work</div>
-            <h2 className="sh">Your roadmap to shipping.</h2>
-            <p className="ssub">
-              Four clear steps built to protect your time, money and vision — from first call to
-              launch day and beyond.
-            </p>
-          </Reveal>
-          <ProcessTimeline />
-        </div>
-      </section>
+      <ProcessSection id="process" headingClass="sh" />
 
       {/* VIDEO BREAK 2 */}
       <div className="vid-sec" style={{ minHeight: 370 }}>

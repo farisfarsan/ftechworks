@@ -22,7 +22,9 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink2);font-family:'Inter',sans-serif;font-size:15px;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s;cursor:none}
+/* overflow-x:clip (not hidden) — hidden makes body a scroll container and
+   breaks position:sticky on .proc-head */
+body{background:var(--bg);color:var(--ink2);font-family:'Inter',sans-serif;font-size:15px;line-height:1.75;overflow-x:clip;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s;cursor:none}
 a,button{cursor:none}
 @media(max-width:768px){body,a,button{cursor:auto}#cursor,#cursor-ring{display:none!important}}
 
@@ -250,7 +252,15 @@ nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.28)}
 .svc-teaser:hover .svc-teaser-link{gap:10px}
 
 /* PROCESS */
-.proc-flow{display:flex;flex-direction:column;max-width:900px}
+/* sticky heading beside a scrolling timeline */
+.proc-layout{display:grid;grid-template-columns:minmax(260px,1fr) 1.5fr;gap:60px;align-items:start}
+.proc-head{position:sticky;top:112px}
+.proc-head .ssub{margin-bottom:0}
+@media(max-width:900px){
+  .proc-layout{grid-template-columns:1fr;gap:38px}
+  .proc-head{position:static}
+}
+.proc-flow{display:flex;flex-direction:column}
 .pstep{display:grid;grid-template-columns:auto 1fr;gap:28px;padding-bottom:40px;position:relative}
 .pstep:last-child{padding-bottom:0}
 /* timeline rail + connecting spine */
