@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toggleTheme } from "@/lib/useTheme";
-import { scrollToHash } from "@/lib/scrollToHash";
+import { scrollToHash, scrollToHashOnLoad } from "@/lib/scrollToHash";
 import { ripple } from "@/lib/ripple";
 
 const SERVICE_LINKS = [
@@ -62,6 +62,10 @@ export default function Nav() {
     return () => document.removeEventListener("keydown", onKey);
   }, [mobOpen]);
 
+  useEffect(() => {
+    scrollToHashOnLoad();
+  }, [pathname]);
+
   const homeHref = (hash: string) => (isHome ? hash : `/${hash}`);
   const isServiceActive = SERVICE_LINKS.some((s) => s.href === pathname);
 
@@ -72,7 +76,14 @@ export default function Nav() {
         <button className="mob-x" onClick={() => setMobOpen(false)}>
           ✕
         </button>
-        <Link href={homeHref("#why")} className="mob-lnk" onClick={() => setMobOpen(false)}>
+        <Link
+          href={homeHref("#why")}
+          className="mob-lnk"
+          onClick={(e) => {
+            if (isHome) scrollToHash(e, "#why");
+            setMobOpen(false);
+          }}
+        >
           Why Us
         </Link>
         {SERVICE_LINKS.map((s) => (
@@ -83,10 +94,24 @@ export default function Nav() {
         <Link href="/work" className="mob-lnk" onClick={() => setMobOpen(false)}>
           Work
         </Link>
-        <Link href={homeHref("#process")} className="mob-lnk" onClick={() => setMobOpen(false)}>
+        <Link
+          href={homeHref("#process")}
+          className="mob-lnk"
+          onClick={(e) => {
+            if (isHome) scrollToHash(e, "#process");
+            setMobOpen(false);
+          }}
+        >
           Process
         </Link>
-        <Link href={homeHref("#contact")} className="mob-lnk" onClick={() => setMobOpen(false)}>
+        <Link
+          href={homeHref("#contact")}
+          className="mob-lnk"
+          onClick={(e) => {
+            if (isHome) scrollToHash(e, "#contact");
+            setMobOpen(false);
+          }}
+        >
           Contact
         </Link>
         <div className="mob-cta-wrap">
@@ -95,6 +120,7 @@ export default function Nav() {
             className="mob-cta"
             onClick={(e) => {
               ripple(e);
+              if (isHome) scrollToHash(e, "#contact");
               setMobOpen(false);
             }}
           >
