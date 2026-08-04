@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import { BASE_FAQS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Video Editing",
@@ -14,6 +15,10 @@ export default function VideoEditingPage() {
       eyebrow="Video Editing"
       title="Footage, cut into stories."
       subtitle="Professional video editing and motion design — promos, ads and social content polished enough to stop the scroll."
+      intro={[
+        "We cut raw footage into something people actually finish watching — promos, ads and social content with the pacing, colour and sound to hold attention past the first few seconds.",
+        "Beyond the edit, we build animated explainers, kinetic typography and branded motion graphics, delivered fast and exported in every format and aspect ratio each platform needs.",
+      ]}
       services={[
         {
           title: "Video Editing",
@@ -26,6 +31,27 @@ export default function VideoEditingPage() {
           tags: ["After Effects", "2D Animation", "Kinetic Typography", "Explainer Videos"],
         },
       ]}
+      deliverables={[
+        "Polished edits for promos, ads and social content",
+        "Professional colour grading",
+        "Sound design and audio mixing",
+        "Animated explainer videos",
+        "Kinetic typography and branded motion graphics",
+        "2D animation",
+        "Multi-format export for every platform",
+        "Fast turnaround on delivery",
+      ]}
+      stack={[
+        "After Effects",
+        "2D Animation",
+        "Kinetic Typography",
+        "Explainer Videos",
+        "Colour Grading",
+        "Sound Design",
+        "Multi-Format Export",
+      ]}
+      stackTitle="Tools & Capabilities"
+      faqs={BASE_FAQS}
       ctaTitle="Have footage that needs a story?"
       ctaBody="Tell us what you're building — we reply within 12 hours with honest advice and a clear plan."
     />

@@ -4,6 +4,7 @@ import InquiryForm from "@/components/InquiryForm";
 import RippleLink from "@/components/RippleLink";
 import TiltCard from "@/components/TiltCard";
 import SocialRail from "@/components/SocialRail";
+import ProcessTimeline from "@/components/ProcessTimeline";
 
 const MQ_ITEMS = [
   "API Development",
@@ -77,37 +78,6 @@ const WHY_STAGES = [
     tag: "Outcome",
     title: "A working product you can demo, launch, or scale from day one.",
     body: "Not a prototype. A real system — tested, documented, deployed, and ready for users. Backed by two weeks of post-launch support at no extra charge.",
-  },
-];
-
-const PROCESS_STEPS = [
-  {
-    icon: "🔍",
-    num: "01",
-    title: "Discover",
-    desc: "A free 30-minute strategy call where we dig deep into your idea, goals, and constraints — honest technical advice, no sales pitch.",
-    chips: ["Free Strategy Call", "Idea Validation", "Market Research"],
-  },
-  {
-    icon: "📋",
-    num: "02",
-    title: "Strategise",
-    desc: "Within 24 hours you receive a written proposal — fixed scope, fixed price, fixed timeline. No vague estimates, no billing surprises.",
-    chips: ["Fixed Scope", "Tech Architecture", "MoSCoW"],
-  },
-  {
-    icon: "⚡",
-    num: "03",
-    title: "Build",
-    desc: "We build iteratively with daily updates — AI-assisted development means 2× the velocity without sacrificing quality or test coverage.",
-    chips: ["2× Velocity", "AI-Assisted", "Daily Updates", "Test Coverage"],
-  },
-  {
-    icon: "🚀",
-    num: "04",
-    title: "Deliver",
-    desc: "Full handoff — deployed, documented, and yours. Two weeks of post-launch support included, at no extra charge.",
-    chips: ["Deployment", "2-Week Support", "Full Docs", "Handoff Guide"],
   },
 ];
 
@@ -278,29 +248,7 @@ export default function Home() {
               launch day and beyond.
             </p>
           </Reveal>
-          <Reveal className="proc-flow" delay="d1">
-            {PROCESS_STEPS.map((step) => (
-              <div className="pstep" key={step.num}>
-                <div className="pstep-rail">
-                  <div className="p-num">{step.num}</div>
-                </div>
-                <div className="pstep-body">
-                  <div className="pstep-head">
-                    <span className="pstep-icon">{step.icon}</span>
-                    <h4>{step.title}</h4>
-                  </div>
-                  <p className="pstep-desc">{step.desc}</p>
-                  <div className="chips">
-                    {step.chips.map((c) => (
-                      <span className="chip" key={c}>
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Reveal>
+          <ProcessTimeline />
         </div>
       </section>
 
