@@ -3,19 +3,34 @@ import Counter from "@/components/Counter";
 import RippleLink from "@/components/RippleLink";
 import TiltCard from "@/components/TiltCard";
 import SocialRail from "@/components/SocialRail";
+import RotatingText from "@/components/RotatingText";
 import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
 
 const MQ_ITEMS = [
-  "API Development",
   "Web Applications",
   "Mobile Apps",
+  "UI/UX Design",
   "AI Chatbots",
-  "Python Automation",
-  "Web Scraping",
   "AI Document Processing",
+  "Branding & Logo Design",
+  "Packaging & Signage",
+  "SEO Optimisation",
+  "Digital Marketing",
+  "Video Editing",
+  "Motion Graphics",
   "Website Design & Build",
-  "AI-Powered Features",
+  "MVP Builds",
+  "API Development",
+];
+
+const ROTATING_SERVICES = [
+  "web apps",
+  "mobile apps",
+  "AI systems",
+  "brand identities",
+  "growth campaigns",
+  "video content",
 ];
 
 const SERVICE_TEASERS = [
@@ -107,10 +122,10 @@ export default function Home() {
             <br />
             real <em>business growth.</em>
           </h1>
+          <RotatingText items={ROTATING_SERVICES} />
           <p className="hero-desc">
-            Ftechworks builds high-performance backends, full-stack web apps, cross-platform
-            mobile apps and AI-powered products — clean architecture, tested code, delivered on
-            time.
+            Full-stack web and mobile apps, AI systems, brand identity, marketing and video —
+            engineered and designed in one place, delivered on time.
           </p>
           <div className="hero-btns">
             <RippleLink href="#services" className="btn-solid">
