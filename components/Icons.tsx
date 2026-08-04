@@ -1,3 +1,42 @@
+// Stage icons for the Why section — stroked with currentColor so each one
+// takes its card's semantic colour instead of an emoji's fixed palette.
+const stageProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  xmlns: "http://www.w3.org/2000/svg",
+};
+
+export function AlertIcon() {
+  return (
+    <svg {...stageProps}>
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+      <path d="M12 9v4" />
+      <path d="M12 17h.01" />
+    </svg>
+  );
+}
+
+export function BoltIcon() {
+  return (
+    <svg {...stageProps}>
+      <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" />
+    </svg>
+  );
+}
+
+export function CheckIcon() {
+  return (
+    <svg {...stageProps}>
+      <path d="M21.8 10.5V12a10 10 0 1 1-5.9-9.1" />
+      <path d="m9 11 3 3L22 4" />
+    </svg>
+  );
+}
+
 export function MailIcon() {
   return (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

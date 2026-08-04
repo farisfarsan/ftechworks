@@ -5,6 +5,7 @@ import TiltCard from "@/components/TiltCard";
 import SocialRail from "@/components/SocialRail";
 import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
+import { AlertIcon, BoltIcon, CheckIcon } from "@/components/Icons";
 
 const MQ_ITEMS = [
   "Web Applications",
@@ -65,21 +66,21 @@ const SERVICE_TEASERS = [
 const WHY_STAGES = [
   {
     key: "prob",
-    icon: "⚠️",
+    Icon: AlertIcon,
     tag: "Problem",
     title: "You have a vision but no technical partner to build it right.",
     body: "Great ideas die waiting for developers who miss deadlines or deliver code that can't scale past launch day. You need someone who actually delivers.",
   },
   {
     key: "soln",
-    icon: "⚡",
+    Icon: BoltIcon,
     tag: "Solution",
     title: "We validate, architect, and ship — fast, clean, production-ready.",
     body: "Years building distributed systems at a fintech startup taught us how to move quickly without cutting corners. Every line of code is intentional.",
   },
   {
     key: "outc",
-    icon: "✅",
+    Icon: CheckIcon,
     tag: "Outcome",
     title: "A working product you can demo, launch, or scale from day one.",
     body: "Not a prototype. A real system — tested, documented, deployed, and ready for users. Backed by two weeks of post-launch support at no extra charge.",
@@ -170,7 +171,9 @@ export default function Home() {
           <Reveal className="pso-grid" delay="d1">
             {WHY_STAGES.map((s) => (
               <div className={`pso ${s.key}`} key={s.key}>
-                <div className="pso-ico">{s.icon}</div>
+                <div className="pso-ico">
+                  <s.Icon />
+                </div>
                 <div className="pso-tag">{s.tag}</div>
                 <h4>{s.title}</h4>
                 <p>{s.body}</p>

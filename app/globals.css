@@ -195,7 +195,7 @@ nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.28)}
 .ey::before{content:'';width:28px;height:2px;background:var(--accent);flex-shrink:0;border-radius:2px}
 .sh{font-family:'Sora',sans-serif;font-size:clamp(30px,3.8vw,54px);font-weight:600;color:var(--ink);letter-spacing:-.025em;line-height:1.06;margin-bottom:14px}
 .sh em{font-style:italic;font-weight:500;color:var(--accent);text-shadow:0 0 24px rgba(var(--accentRgb),.3)}
-.ssub{font-size:14.5px;color:var(--ink2);line-height:1.82;max-width:500px;margin-bottom:56px}
+.ssub{font-size:14.5px;color:var(--ink2);line-height:1.82;max-width:540px;text-wrap:pretty;margin-bottom:56px}
 .cat-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .cat-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
 .cat-rule{flex:1;height:1px;background:var(--b1)}
@@ -213,11 +213,12 @@ nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.28)}
 /* outcome is the payoff — give it a tinted lift */
 .pso.outc{background:linear-gradient(165deg,rgba(var(--accentRgb),.08),transparent 62%),var(--card);border-color:rgba(var(--accentRgb),.3)}
 /* stage icon */
-.pso-ico{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px;border:1px solid;transition:transform .3s cubic-bezier(.34,1.4,.64,1)}
+.pso-ico{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid;transition:transform .3s cubic-bezier(.34,1.4,.64,1)}
+.pso-ico svg{width:20px;height:20px;display:block}
 .pso:hover .pso-ico{transform:scale(1.1) rotate(-7deg)}
-.prob .pso-ico{background:rgba(255,84,84,.1);border-color:rgba(255,84,84,.3)}
-.soln .pso-ico{background:rgba(245,166,35,.1);border-color:rgba(245,166,35,.3)}
-.outc .pso-ico{background:rgba(var(--accentRgb),.13);border-color:rgba(var(--accentRgb),.34)}
+.prob .pso-ico{background:rgba(255,84,84,.1);border-color:rgba(255,84,84,.3);color:var(--red)}
+.soln .pso-ico{background:rgba(245,166,35,.1);border-color:rgba(245,166,35,.3);color:#f5a623}
+.outc .pso-ico{background:rgba(var(--accentRgb),.13);border-color:rgba(var(--accentRgb),.34);color:var(--accent)}
 .pso-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
 .prob .pso-tag{color:var(--red)}
 .soln .pso-tag{color:#f5a623}
