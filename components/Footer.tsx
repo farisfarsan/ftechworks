@@ -28,12 +28,24 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer>
       <div className="footer-in">
         <div className="footer-col footer-brand">
           <Image src="/logo.png" alt="Ftechworks" width={211} height={26} className="logo-img" />
-          <p>Technology for Business Growth — full-stack web, mobile, and AI-powered products.</p>
+          <p>
+            Digital solutions that scale your business — websites, web apps, AI automation,
+            marketing, design and video.
+          </p>
+          <a href="mailto:ftechworks8@gmail.com" className="footer-mail">
+            ftechworks8@gmail.com
+          </a>
+          <div className="footer-status">
+            <span className="pulse"></span>
+            Available for new projects · Replies within 12 hours
+          </div>
           <div className="footer-socials">
             {SOCIALS.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener" aria-label={s.label}>
@@ -60,7 +72,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2025 Ftechworks · Technology for Business Growth</p>
+        <p>© {year} Ftechworks · Technology for Business Growth</p>
         <p>Available Worldwide</p>
       </div>
     </footer>
