@@ -1,10 +1,10 @@
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
-import RippleLink from "@/components/RippleLink";
 import TiltCard from "@/components/TiltCard";
-import SocialRail from "@/components/SocialRail";
 import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
+import HeroSection from "@/components/HeroSection";
+import PortfolioSection from "@/components/PortfolioSection";
 import { AlertIcon, BoltIcon, CheckIcon } from "@/components/Icons";
 
 const MQ_ITEMS = [
@@ -91,61 +91,26 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="hero" id="home">
-        <div className="hero-bg">
-          <video autoPlay muted loop playsInline>
-            <source
-              src="https://videos.pexels.com/video-files/3141208/3141208-uhd_2560_1440_25fps.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div className="orb orb1"></div>
-          <div className="orb orb2"></div>
-          <div className="stars"></div>
-        </div>
-        <div className="hero-inner">
-          <div className="badge">
-            <span className="pulse"></span>
-            Available for New Projects
+      <HeroSection />
+
+      {/* STATS — no home in the new hero design, kept as a strip so the
+          content isn't silently dropped */}
+      <div className="sec" style={{ padding: "48px 60px" }}>
+        <div className="sec-in" style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
+          <div className="stat" style={{ flex: "unset", padding: 0 }}>
+            <Counter count={3} suffix="+" />
+            <div className="stat-l">Years in Production</div>
           </div>
-          <h1>
-            We build it, brand it,
-            <br />
-            and <em>take it to market.</em>
-          </h1>
-          <p className="hero-desc">
-            From websites and web apps to AI automation, marketing, design and video —
-            production-ready work, built to help you grow faster.
-          </p>
-          <div className="hero-btns">
-            <RippleLink href="#services" className="btn-solid">
-              Explore Services
-            </RippleLink>
-            <RippleLink href="#contact" className="btn-ghost">
-              Start a Project →
-            </RippleLink>
+          <div className="stat" style={{ flex: "unset", padding: 0 }}>
+            <div className="stat-n">Team</div>
+            <div className="stat-l">Experienced Devs</div>
           </div>
-          <div className="stats-row">
-            <div className="stat">
-              <Counter count={3} suffix="+" />
-              <div className="stat-l">Years in Production</div>
-            </div>
-            <div className="stat">
-              <div className="stat-n">Team</div>
-              <div className="stat-l">Experienced Devs</div>
-            </div>
-            <div className="stat">
-              <Counter count={14} suffix="" />
-              <div className="stat-l">Services Offered</div>
-            </div>
+          <div className="stat" style={{ flex: "unset", padding: 0 }}>
+            <Counter count={14} suffix="" />
+            <div className="stat-l">Services Offered</div>
           </div>
         </div>
-        <SocialRail />
-        <div className="scroll-ind">
-          Scroll
-          <span>↓</span>
-        </div>
-      </section>
+      </div>
 
       {/* MARQUEE */}
       <div className="mq">
@@ -183,14 +148,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VIDEO BREAK 1 */}
+      {/* BREAK 1 */}
       <div className="vid-sec">
-        <video autoPlay muted loop playsInline>
-          <source
-            src="https://videos.pexels.com/video-files/3130284/3130284-uhd_2560_1440_25fps.mp4"
-            type="video/mp4"
-          />
-        </video>
         <Reveal className="vid-inner">
           <div className="ey" style={{ justifyContent: "center" }}>
             Our Philosophy
@@ -244,17 +203,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PORTFOLIO */}
+      <section className="sec" id="portfolio">
+        <div className="sec-in">
+          <Reveal>
+            <div className="ey">Our Work</div>
+            <h2 className="sh">Selected projects.</h2>
+            <p className="ssub">
+              Real systems built for real clients — filter by category to explore.
+            </p>
+          </Reveal>
+          <PortfolioSection />
+        </div>
+      </section>
+
       {/* PROCESS */}
       <ProcessSection id="process" headingClass="sh" />
 
-      {/* VIDEO BREAK 2 */}
+      {/* BREAK 2 */}
       <div className="vid-sec" style={{ minHeight: 370 }}>
-        <video autoPlay muted loop playsInline>
-          <source
-            src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4"
-            type="video/mp4"
-          />
-        </video>
         <Reveal className="vid-inner">
           <div className="ey" style={{ justifyContent: "center" }}>
             Built to Last

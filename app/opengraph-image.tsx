@@ -15,7 +15,7 @@ export default function OgImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "#06060a",
+          background: "#050505",
           fontFamily: "sans-serif",
         }}
       >
@@ -34,7 +34,7 @@ export default function OgImage() {
           style={{
             marginTop: 22,
             fontSize: 30,
-            color: "#b8ff35",
+            color: "#f47a12",
             fontStyle: "italic",
             display: "flex",
           }}

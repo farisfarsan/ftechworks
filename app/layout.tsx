@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import ThemeScript from "@/components/ThemeScript";
+import Preloader from "@/components/Preloader";
+import SmoothScroll from "@/components/SmoothScroll";
+import CursorGlow from "@/components/CursorGlow";
 import CustomCursor from "@/components/CustomCursor";
 import ProgressBar from "@/components/ProgressBar";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -38,13 +41,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
+        {/* Marks JS availability before first paint — animation CSS only hides
+            content under html.js, so no-JS visitors and crawlers see everything. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <ThemeScript />
         <JsonLd />
       </head>
       <body>
+        <Preloader />
+        <SmoothScroll />
+        <CursorGlow />
         <CustomCursor />
         <ProgressBar />
         <WhatsAppFloat />
