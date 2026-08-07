@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import Magnetic from "@/components/Magnetic";
 import { scrollToHash } from "@/lib/scrollToHash";
@@ -105,9 +106,8 @@ function startMesh(canvas: HTMLCanvasElement, mouse: { x: number; y: number }) {
 export default function HeroSection() {
   const rootRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const visualRef = useRef<HTMLDivElement>(null);
 
-  // Background: mesh canvas + mouse parallax on the orb.
+  // Background mesh canvas.
   useEffect(() => {
     const root = rootRef.current;
     const canvas = canvasRef.current;
@@ -119,13 +119,9 @@ export default function HeroSection() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let onMove: ((e: MouseEvent) => void) | null = null;
     if (!reduced) {
-      const vx = gsap.quickTo(visualRef.current, "x", { duration: 0.9, ease: "power3.out" });
-      const vy = gsap.quickTo(visualRef.current, "y", { duration: 0.9, ease: "power3.out" });
       onMove = (e: MouseEvent) => {
         mouse.x = e.clientX / window.innerWidth;
         mouse.y = e.clientY / window.innerHeight;
-        vx((mouse.x - 0.5) * 30);
-        vy((mouse.y - 0.5) * 22);
       };
       window.addEventListener("mousemove", onMove, { passive: true });
     }
@@ -151,18 +147,16 @@ export default function HeroSection() {
       tl = gsap.timeline({
         onComplete: () => {
           root.classList.remove("anim-pending");
-          gsap.set(
-            root.querySelectorAll(".ht-in,.badge,.hero-sub,.hero-cta-row,.hero-visual,.scroll-ind"),
-            { clearProps: "transform,opacity,visibility" }
-          );
+          gsap.set(root.querySelectorAll(".ht-in,.badge,.hero-sub,.hero-cta-row,.scroll-ind"), {
+            clearProps: "transform,opacity,visibility",
+          });
         },
       });
       tl.fromTo(".hero .badge", { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, ease: "power3.out" })
         .to(".hero .ht-in", { y: 0, duration: 1.05, ease: "power4.out", stagger: 0.09 }, "-=0.3")
         .fromTo(".hero .hero-sub", { y: 26, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out" }, "-=0.55")
         .fromTo(".hero .hero-cta-row", { y: 26, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out" }, "-=0.5")
-        .fromTo(".hero .hero-visual", { scale: 0.92, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 1.1, ease: "power3.out" }, "-=0.9")
-        .fromTo(".hero .scroll-ind", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.6 }, "-=0.4");
+        .fromTo(".hero .scroll-ind", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.6 }, "-=0.6");
     });
 
     return () => {
@@ -206,19 +200,10 @@ export default function HeroSection() {
               </a>
             </Magnetic>
             <Magnetic strength={0.24}>
-              <a href="#portfolio" className="btn-hollow" onClick={(e) => scrollToHash(e, "#portfolio")}>
+              <Link href="/work" className="btn-hollow">
                 View Portfolio
-              </a>
+              </Link>
             </Magnetic>
-          </div>
-        </div>
-
-        <div className="hero-visual" ref={visualRef} aria-hidden="true">
-          <div className="orb-wrap">
-            <div className="orb-ring r2"></div>
-            <div className="orb-core"></div>
-            <div className="orb-ring"></div>
-            <div className="orb-dot"></div>
           </div>
         </div>
       </div>

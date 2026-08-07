@@ -303,10 +303,10 @@ export default function WorkPage() {
             <h3>Like what you see?</h3>
             <p>Tell us what you&apos;re building — we reply within 12 hours with honest advice and a clear plan.</p>
             <div className="cta-band-btns">
-              <RippleLink href="/#contact" className="btn-solid">
+              <RippleLink href="/#contact" className="btn-lq">
                 Start a Project →
               </RippleLink>
-              <RippleLink href="/" className="btn-ghost">
+              <RippleLink href="/" className="btn-hollow">
                 See all Services
               </RippleLink>
             </div>

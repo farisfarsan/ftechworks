@@ -163,10 +163,10 @@ export default function ServicePageLayout({
             <h3>{ctaTitle}</h3>
             <p>{ctaBody}</p>
             <div className="cta-band-btns">
-              <RippleLink href="/#contact" className="btn-solid">
+              <RippleLink href="/#contact" className="btn-lq">
                 Start a Project →
               </RippleLink>
-              <RippleLink href="/work" className="btn-ghost">
+              <RippleLink href="/work" className="btn-hollow">
                 See our Work
               </RippleLink>
             </div>

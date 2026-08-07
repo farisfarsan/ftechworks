@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { markPreloaderDone } from "@/lib/preloaderState";
-
-const WORD = "FTECHWORKS";
 
 export default function Preloader() {
   const [gone, setGone] = useState(false);
@@ -32,11 +31,11 @@ export default function Preloader() {
       },
     });
 
-    tl.to(root.querySelectorAll(".pl-logo span"), {
+    tl.to(root.querySelector(".pl-logo-img"), {
+      opacity: 1,
       y: 0,
       duration: 0.7,
       ease: "power4.out",
-      stagger: 0.045,
     })
       .to(
         counter,
@@ -69,13 +68,7 @@ export default function Preloader() {
 
   return (
     <div id="preloader" ref={rootRef} aria-hidden="true">
-      <div className="pl-logo">
-        {WORD.split("").map((ch, i) => (
-          <span key={i} className={ch === "F" || ch === "W" ? "pl-o" : undefined}>
-            {ch}
-          </span>
-        ))}
-      </div>
+      <Image src="/logo.png" alt="Ftechworks" width={211} height={26} className="pl-logo-img" priority />
       <div className="pl-bar">
         <div className="pl-fill" ref={fillRef}></div>
       </div>

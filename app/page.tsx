@@ -4,7 +4,6 @@ import TiltCard from "@/components/TiltCard";
 import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
-import PortfolioSection from "@/components/PortfolioSection";
 import { AlertIcon, BoltIcon, CheckIcon } from "@/components/Icons";
 
 const MQ_ITEMS = [
@@ -200,20 +199,6 @@ export default function Home() {
               </TiltCard>
             ))}
           </Reveal>
-        </div>
-      </section>
-
-      {/* PORTFOLIO */}
-      <section className="sec" id="portfolio">
-        <div className="sec-in">
-          <Reveal>
-            <div className="ey">Our Work</div>
-            <h2 className="sh">Selected projects.</h2>
-            <p className="ssub">
-              Real systems built for real clients — filter by category to explore.
-            </p>
-          </Reveal>
-          <PortfolioSection />
         </div>
       </section>
 
