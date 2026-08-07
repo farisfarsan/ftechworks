@@ -44,7 +44,7 @@ export default function Footer() {
           </a>
           <div className="footer-status">
             <span className="pulse"></span>
-            Available for new projects · Replies within 12 hours
+            Available for new projects · Founder replies within 12 hours
           </div>
           <div className="footer-socials">
             {SOCIALS.map((s) => (

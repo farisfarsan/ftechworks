@@ -179,7 +179,7 @@ export default function HeroSection() {
         <div className="hero-copy">
           <div className="badge">
             <span className="pulse"></span>
-            Available for New Projects
+            Founder-Led · Available for New Projects
           </div>
           <h1 className="hero-title">
             {LINES.map((line, i) => (
