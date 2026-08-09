@@ -30,17 +30,6 @@ export default function OgImage() {
         >
           {SITE_NAME}
         </div>
-        <div
-          style={{
-            marginTop: 22,
-            fontSize: 30,
-            color: "#f47a12",
-            fontStyle: "italic",
-            display: "flex",
-          }}
-        >
-          Technology for Business Growth
-        </div>
       </div>
     ),
     { ...size }

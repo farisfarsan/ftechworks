@@ -142,10 +142,6 @@ export default function HeroSection() {
 
       <div className="hero-inner">
         <div className="hero-copy">
-          <div className="badge">
-            <span className="pulse"></span>
-            Available for New Projects
-          </div>
           <h1 className="hero-title">
             {LINES.map((line, i) => (
               <span key={line} className={`ht-line${i === ACCENT_LINE ? " ht-accent" : ""}`}>

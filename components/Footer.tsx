@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© {year} Ftechworks · Technology for Business Growth</p>
+        <p>© {year} Ftechworks</p>
         <p>Available Worldwide</p>
       </div>
     </footer>
