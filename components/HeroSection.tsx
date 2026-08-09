@@ -5,7 +5,7 @@ import Link from "next/link";
 import Magnetic from "@/components/Magnetic";
 import { scrollToHash } from "@/lib/scrollToHash";
 
-const LINES = ["ONE FOUNDER.", "REAL", "PRODUCTION", "SYSTEMS."];
+const LINES = ["WE BUILD", "DIGITAL", "EXPERIENCES", "THAT SCALE."];
 const ACCENT_LINE = 2;
 
 const ArrowIcon = (
