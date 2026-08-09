@@ -3,10 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toggleTheme } from "@/lib/useTheme";
 import { scrollToHash, scrollToHashOnLoad } from "@/lib/scrollToHash";
 import { ripple } from "@/lib/ripple";
+import { MoonIcon, SunIcon } from "@/components/Icons";
 
 const SERVICE_LINKS = [
   { href: "/web-design-development", label: "Web Design & Dev" },
@@ -53,10 +54,33 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
 
+  const mobRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     document.body.style.overflow = mobOpen ? "hidden" : "";
+    if (!mobOpen) return;
+
+    const drawer = mobRef.current;
+    const focusables = drawer?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled])'
+    );
+    focusables?.[0]?.focus();
+
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setMobOpen(false);
+      if (e.key === "Escape") {
+        setMobOpen(false);
+        return;
+      }
+      if (e.key !== "Tab" || !focusables || focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -64,6 +88,7 @@ export default function Nav() {
 
   useEffect(() => {
     scrollToHashOnLoad();
+    setMobOpen(false);
   }, [pathname]);
 
   const homeHref = (hash: string) => (isHome ? hash : `/${hash}`);
@@ -72,8 +97,8 @@ export default function Nav() {
   return (
     <>
       {/* MOB MENU */}
-      <div className={`mob${mobOpen ? " open" : ""}`} id="mob">
-        <button className="mob-x" onClick={() => setMobOpen(false)}>
+      <div className={`mob${mobOpen ? " open" : ""}`} id="mob" ref={mobRef} role="dialog" aria-modal="true" aria-label="Site menu">
+        <button className="mob-x" onClick={() => setMobOpen(false)} aria-label="Close menu">
           ✕
         </button>
         <Link
@@ -187,9 +212,13 @@ export default function Nav() {
           </li>
         </ul>
         <div className="nav-r">
-          <button className="thbtn" onClick={toggleTheme} title="Toggle theme">
-            <span className="tico moon">🌙</span>
-            <span className="tico sun">☀️</span>
+          <button className="thbtn" onClick={toggleTheme} aria-label="Toggle theme">
+            <span className="tico moon">
+              <MoonIcon />
+            </span>
+            <span className="tico sun">
+              <SunIcon />
+            </span>
           </button>
           <a
             href={homeHref("#contact")}
@@ -205,6 +234,9 @@ export default function Nav() {
             className={`burger${mobOpen ? " open" : ""}`}
             id="burger"
             onClick={() => setMobOpen((o) => !o)}
+            aria-label={mobOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobOpen}
+            aria-controls="mob"
           >
             <span></span>
             <span></span>

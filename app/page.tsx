@@ -6,7 +6,6 @@ import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
 import FounderSection from "@/components/FounderSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
-import PricingSection from "@/components/PricingSection";
 import { AlertIcon, BoltIcon, CheckIcon } from "@/components/Icons";
 import { STATS } from "@/lib/stats";
 
@@ -30,37 +29,37 @@ const MQ_ITEMS = [
 const SERVICE_TEASERS = [
   {
     href: "/web-design-development",
-    icon: "🌐",
+    num: "01",
     title: "Web Design & Development",
     desc: "Full-stack web apps, admin dashboards and business websites built to convert visitors into clients.",
   },
   {
     href: "/uiux-app",
-    icon: "📱",
+    num: "02",
     title: "UI/UX & App",
     desc: "Cross-platform mobile apps, UI/UX design and full end-to-end MVP builds, from idea to live product.",
   },
   {
     href: "/ai",
-    icon: "🤖",
+    num: "03",
     title: "AI & Intelligent Systems",
     desc: "Chatbots, document processing and AI-powered features trained on your data.",
   },
   {
     href: "/branding",
-    icon: "🎨",
+    num: "04",
     title: "Branding & Logo Design",
     desc: "Brand strategy and full identity design — logo, colour system, packaging and signage.",
   },
   {
     href: "/marketing",
-    icon: "📈",
+    num: "05",
     title: "Marketing",
     desc: "SEO optimisation and digital marketing campaigns that grow your reach and ROI.",
   },
   {
     href: "/video-editing",
-    icon: "🎬",
+    num: "06",
     title: "Video Editing",
     desc: "Video editing and motion graphics — promos and social content polished enough to stop the scroll.",
   },
@@ -98,7 +97,7 @@ export default function Home() {
 
       {/* STATS — no home in the new hero design, kept as a strip so the
           content isn't silently dropped */}
-      <div className="sec" style={{ padding: "48px 60px" }}>
+      <div className="sec sec-compact">
         <div className="sec-in" style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
           {STATS.map((s) => (
             <div className="stat" style={{ flex: "unset", padding: 0 }} key={s.label}>
@@ -141,7 +140,7 @@ export default function Home() {
                   <s.Icon />
                 </div>
                 <div className="pso-tag">{s.tag}</div>
-                <h4>{s.title}</h4>
+                <h3>{s.title}</h3>
                 <p>{s.body}</p>
               </div>
             ))}
@@ -198,7 +197,7 @@ export default function Home() {
           <Reveal className="svc-grid" delay="d1">
             {SERVICE_TEASERS.map((s) => (
               <TiltCard href={s.href} intensity={{ x: 10, y: -8 }} className="svc-card svc-teaser" key={s.href}>
-                <div className="svc-ico">{s.icon}</div>
+                <div className="svc-ico">{s.num}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <div className="svc-teaser-link">
@@ -212,9 +211,6 @@ export default function Home() {
 
       {/* PROCESS */}
       <ProcessSection id="process" headingClass="sh" />
-
-      {/* PRICING */}
-      <PricingSection />
 
       {/* BREAK 2 */}
       <div className="vid-sec" style={{ minHeight: 370 }}>

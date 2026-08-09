@@ -11,8 +11,7 @@ export default function ProcessTimeline() {
           </div>
           <div className="pstep-body">
             <div className="pstep-head">
-              <span className="pstep-icon">{step.icon}</span>
-              <h4>{step.title}</h4>
+              <h3>{step.title}</h3>
             </div>
             <p className="pstep-desc">{step.desc}</p>
             <div className="chips">

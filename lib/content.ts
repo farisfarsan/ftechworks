@@ -24,28 +24,24 @@ export const BASE_FAQS = [
 
 export const PROCESS_STEPS = [
   {
-    icon: "🔍",
     num: "01",
     title: "Discover",
     desc: "A free 30-minute strategy call where we dig deep into your idea, goals, and constraints — honest technical advice, no sales pitch.",
     chips: ["Free Strategy Call", "Idea Validation", "Market Research"],
   },
   {
-    icon: "📋",
     num: "02",
     title: "Strategise",
     desc: "Within 24 hours you receive a written proposal — fixed scope, fixed price, fixed timeline. No vague estimates, no billing surprises.",
     chips: ["Fixed Scope", "Tech Architecture", "MoSCoW"],
   },
   {
-    icon: "⚡",
     num: "03",
     title: "Build",
     desc: "We build iteratively with daily updates — every commit is code-reviewed, tested and documented as we go, so nothing reaches you unfinished.",
     chips: ["Daily Updates", "Code Review", "Test Coverage", "Documented as We Build"],
   },
   {
-    icon: "🚀",
     num: "04",
     title: "Deliver",
     desc: "Full handoff — deployed, documented, and yours. Two weeks of post-launch support included, at no extra charge.",

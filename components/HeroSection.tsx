@@ -5,7 +5,7 @@ import Link from "next/link";
 import Magnetic from "@/components/Magnetic";
 import { scrollToHash } from "@/lib/scrollToHash";
 
-const LINES = ["WE BUILD", "DIGITAL", "EXPERIENCES", "THAT SCALE."];
+const LINES = ["ONE FOUNDER.", "REAL", "PRODUCTION", "SYSTEMS."];
 const ACCENT_LINE = 2;
 
 const ArrowIcon = (
@@ -164,11 +164,9 @@ export default function HeroSection() {
                 <span>Start Your Project {ArrowIcon}</span>
               </a>
             </Magnetic>
-            <Magnetic strength={0.24}>
-              <Link href="/work" className="btn-hollow">
-                View Portfolio
-              </Link>
-            </Magnetic>
+            <Link href="/work" className="hero-secondary-link">
+              View Portfolio <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </div>

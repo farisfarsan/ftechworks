@@ -31,7 +31,7 @@ export default function WorkPage() {
       />
 
       {/* PAGE HEADER */}
-      <section className="sec" style={{ paddingTop: 150, paddingBottom: 60 }}>
+      <section className="sec sec-page-header">
         <div className="sec-in">
           <Reveal>
             <Link href="/" className="back-lnk">

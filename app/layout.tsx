@@ -50,13 +50,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd />
       </head>
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <SmoothScroll />
         <CursorGlow />
         <CustomCursor />
         <ProgressBar />
         <WhatsAppFloat />
         <Nav />
-        {children}
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

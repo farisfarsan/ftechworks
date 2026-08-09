@@ -77,7 +77,7 @@ export default function ServicePageLayout({
       )}
 
       {/* PAGE HEADER */}
-      <section className="sec svc-hero" style={{ paddingTop: 150, paddingBottom: 60 }}>
+      <section className="sec svc-hero sec-page-header">
         <div className="sec-in">
           <Reveal>
             <Link href="/" className="back-lnk">

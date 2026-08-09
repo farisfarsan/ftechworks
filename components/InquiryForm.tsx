@@ -1,49 +1,190 @@
 "use client";
 
-import { useRef } from "react";
+import { useState, type FocusEvent, type FormEvent } from "react";
 import { ripple } from "@/lib/ripple";
+import { WA_LINK } from "@/components/WhatsAppFloat";
+
+type Field = "name" | "email" | "phone" | "service" | "message";
+type Errors = Partial<Record<Field, string>>;
+type Status = "idle" | "submitting" | "success" | "error";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_RE = /^[+\d][\d\s()-]{6,}$/;
+
+function validateField(field: Field, value: string): string {
+  const v = value.trim();
+  switch (field) {
+    case "name":
+      return v ? "" : "Enter your name.";
+    case "email":
+      if (!v) return "Enter your email.";
+      return EMAIL_RE.test(v) ? "" : "Enter a valid email address.";
+    case "phone":
+      if (!v) return "";
+      return PHONE_RE.test(v) ? "" : "Enter a valid phone number.";
+    case "service":
+      return v ? "" : "Select a service.";
+    case "message":
+      if (!v) return "Tell us a little about the project.";
+      return v.length >= 10 ? "" : "A few more details would help (10+ characters).";
+  }
+}
+
+function encode(data: Record<string, string>) {
+  return Object.entries(data)
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .join("&");
+}
 
 export default function InquiryForm() {
-  const formRef = useRef<HTMLFormElement>(null);
+  const [errors, setErrors] = useState<Errors>({});
+  const [status, setStatus] = useState<Status>("idle");
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onBlur(e: FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
+    const field = e.currentTarget.name as Field;
+    setErrors((prev) => ({ ...prev, [field]: validateField(field, e.currentTarget.value) }));
+  }
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const f = new FormData(e.currentTarget);
-    const lines = [
-      "Hi Team Ftechworks! I'd like to discuss a project.",
-      "",
-      `Name: ${f.get("name")}`,
-      `Email: ${f.get("email")}`,
-      `Phone: ${f.get("phone") || "—"}`,
-      `Service: ${f.get("service")}`,
-      "",
-      "Project details:",
-      String(f.get("message") ?? ""),
-    ];
-    const msg = encodeURIComponent(lines.join("\n"));
-    window.open(`https://wa.me/919061894005?text=${msg}`, "_blank");
+    const form = e.currentTarget;
+    const f = new FormData(form);
+    const values = {
+      name: String(f.get("name") ?? ""),
+      email: String(f.get("email") ?? ""),
+      phone: String(f.get("phone") ?? ""),
+      service: String(f.get("service") ?? ""),
+      message: String(f.get("message") ?? ""),
+    };
+
+    const nextErrors: Errors = {};
+    (Object.keys(values) as Field[]).forEach((field) => {
+      const err = validateField(field, values[field]);
+      if (err) nextErrors[field] = err;
+    });
+    setErrors(nextErrors);
+
+    if (Object.keys(nextErrors).length > 0) {
+      const firstField = Object.keys(nextErrors)[0];
+      form.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus();
+      return;
+    }
+
+    setStatus("submitting");
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "inquiry", ...values }),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="c-form c-form-success" role="status">
+        <h3>Message sent.</h3>
+        <p>We reply within 12 hours with honest advice and a clear plan.</p>
+      </div>
+    );
   }
 
   return (
-    <form className="c-form" id="inquiryForm" ref={formRef} onSubmit={onSubmit}>
+    <form
+      className="c-form"
+      id="inquiryForm"
+      name="inquiry"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      onSubmit={onSubmit}
+      noValidate
+    >
+      <input type="hidden" name="form-name" value="inquiry" />
+      <p style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
+        <label>
+          Leave this field blank
+          <input name="bot-field" tabIndex={-1} autoComplete="off" />
+        </label>
+      </p>
+
       <div className="c-form-row">
         <div className="c-field">
           <label htmlFor="cf-name">Name</label>
-          <input id="cf-name" name="name" type="text" placeholder="Your name" required />
+          <input
+            id="cf-name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            placeholder="Your name"
+            required
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? "cf-name-err" : undefined}
+            onBlur={onBlur}
+          />
+          {errors.name && (
+            <span className="c-field-err" id="cf-name-err" role="alert">
+              {errors.name}
+            </span>
+          )}
         </div>
         <div className="c-field">
           <label htmlFor="cf-email">Email</label>
-          <input id="cf-email" name="email" type="email" placeholder="you@company.com" required />
+          <input
+            id="cf-email"
+            name="email"
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            placeholder="you@company.com"
+            required
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "cf-email-err" : undefined}
+            onBlur={onBlur}
+          />
+          {errors.email && (
+            <span className="c-field-err" id="cf-email-err" role="alert">
+              {errors.email}
+            </span>
+          )}
         </div>
       </div>
       <div className="c-form-row">
         <div className="c-field">
           <label htmlFor="cf-phone">Phone (optional)</label>
-          <input id="cf-phone" name="phone" type="tel" placeholder="+1 234 567 8900" />
+          <input
+            id="cf-phone"
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="+1 234 567 8900"
+            aria-invalid={!!errors.phone}
+            aria-describedby={errors.phone ? "cf-phone-err" : undefined}
+            onBlur={onBlur}
+          />
+          {errors.phone && (
+            <span className="c-field-err" id="cf-phone-err" role="alert">
+              {errors.phone}
+            </span>
+          )}
         </div>
         <div className="c-field">
           <label htmlFor="cf-service">Service</label>
-          <select id="cf-service" name="service" defaultValue="" required>
+          <select
+            id="cf-service"
+            name="service"
+            defaultValue=""
+            required
+            aria-invalid={!!errors.service}
+            aria-describedby={errors.service ? "cf-service-err" : undefined}
+            onBlur={onBlur}
+          >
             <option value="" disabled>
               Select a service
             </option>
@@ -58,18 +199,50 @@ export default function InquiryForm() {
             <option>Video Editing</option>
             <option>Not sure yet</option>
           </select>
+          {errors.service && (
+            <span className="c-field-err" id="cf-service-err" role="alert">
+              {errors.service}
+            </span>
+          )}
         </div>
       </div>
       <div className="c-field">
         <label htmlFor="cf-message">Tell us about your project</label>
-        <textarea id="cf-message" name="message" placeholder="What are you trying to build?" required />
+        <textarea
+          id="cf-message"
+          name="message"
+          placeholder="What are you trying to build?"
+          required
+          aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? "cf-message-err" : undefined}
+          onBlur={onBlur}
+        />
+        {errors.message && (
+          <span className="c-field-err" id="cf-message-err" role="alert">
+            {errors.message}
+          </span>
+        )}
       </div>
-      <button type="submit" className="c-form-submit" onClick={ripple}>
-        Send Inquiry via WhatsApp <span>→</span>
+
+      <button
+        type="submit"
+        className="c-form-submit"
+        onClick={ripple}
+        disabled={status === "submitting"}
+        aria-busy={status === "submitting"}
+      >
+        {status === "submitting" ? "Sending…" : "Send Inquiry"} <span>→</span>
       </button>
-      <p className="c-form-note">
-        Opens WhatsApp with your details filled in — we reply within 12 hours.
-      </p>
+      {status === "error" && (
+        <p className="c-form-err-note" role="alert">
+          Something went wrong sending that — try again, or{" "}
+          <a href={WA_LINK} target="_blank" rel="noopener">
+            message us on WhatsApp
+          </a>{" "}
+          instead.
+        </p>
+      )}
+      <p className="c-form-note">We reply within 12 hours.</p>
     </form>
   );
 }

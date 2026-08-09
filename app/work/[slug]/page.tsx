@@ -41,7 +41,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       />
 
       {/* PAGE HEADER */}
-      <section className="sec" style={{ paddingTop: 150, paddingBottom: 60 }}>
+      <section className="sec sec-page-header">
         <div className="sec-in">
           <Reveal>
             <Link href="/work" className="back-lnk">
