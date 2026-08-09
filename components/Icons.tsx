@@ -54,6 +54,66 @@ export function SunIcon() {
   );
 }
 
+export function CodeIcon() {
+  return (
+    <svg {...stageProps}>
+      <path d="m8 8-4 4 4 4" />
+      <path d="m16 8 4 4-4 4" />
+      <path d="m13 4-2 16" />
+    </svg>
+  );
+}
+
+export function SmartphoneIcon() {
+  return (
+    <svg {...stageProps}>
+      <rect x="6" y="2" width="12" height="20" rx="2.5" />
+      <path d="M11 18h2" />
+    </svg>
+  );
+}
+
+export function BotIcon() {
+  return (
+    <svg {...stageProps}>
+      <path d="M12 2v3" />
+      <rect x="4" y="5" width="16" height="13" rx="3" />
+      <path d="M9 12v-1M15 12v-1" />
+      <path d="M2 13h2M20 13h2" />
+      <path d="M9 17h6" />
+    </svg>
+  );
+}
+
+export function PaletteIcon() {
+  return (
+    <svg {...stageProps}>
+      <path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.4c1.9 0 3.6-1.7 3.6-3.6C21 6.6 17 2 12 2Z" />
+      <circle cx="7.5" cy="11.5" r="1.2" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="7.5" r="1.2" fill="currentColor" stroke="none" />
+      <circle cx="16.5" cy="11.5" r="1.2" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function TrendingUpIcon() {
+  return (
+    <svg {...stageProps}>
+      <path d="m3 17 6-6 4 4 8-8" />
+      <path d="M15 7h6v6" />
+    </svg>
+  );
+}
+
+export function VideoIcon() {
+  return (
+    <svg {...stageProps}>
+      <rect x="2" y="5" width="14" height="14" rx="2.5" />
+      <path d="m16 10 5.5-3.2c.7-.4 1.5.1 1.5.9v8.6c0 .8-.8 1.3-1.5.9L16 14" />
+    </svg>
+  );
+}
+
 export function MailIcon() {
   return (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

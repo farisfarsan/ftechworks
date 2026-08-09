@@ -173,7 +173,7 @@ export default function ServicePageLayout({
       {/* PROCESS */}
       <ProcessSection
         className="sec sec-alt"
-        subtitle="The same four steps on every project — built to protect your time, money and vision."
+        subtitle="The same four steps on every project, built to protect your time, money and vision."
       />
 
       {/* FAQ */}

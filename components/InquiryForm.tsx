@@ -232,7 +232,7 @@ export default function InquiryForm() {
       </button>
       {status === "error" && (
         <p className="c-form-err-note" role="alert">
-          Something went wrong sending that — try again, or{" "}
+          Something went wrong sending that. Try again, or{" "}
           <a href={WA_LINK} target="_blank" rel="noopener">
             message us on WhatsApp
           </a>{" "}

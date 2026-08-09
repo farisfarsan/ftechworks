@@ -9,7 +9,7 @@ const NEXT_STEPS = [
   {
     n: "1",
     title: "We reply within 12 hours",
-    desc: "A real answer from the people who'd build it — not an auto-responder.",
+    desc: "A real answer from the people who'd build it, not an auto-responder.",
   },
   {
     n: "2",
@@ -40,7 +40,7 @@ export default function ContactSection() {
               Let&apos;s build something <em>remarkable.</em>
             </h2>
             <p className="ssub contact-lede">
-              Have an idea or a question? Reach out directly — no fluff, just honest advice and a
+              Have an idea or a question? Reach out directly. No fluff, just honest advice and a
               clear plan.
             </p>
 

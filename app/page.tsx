@@ -4,7 +4,17 @@ import TiltCard from "@/components/TiltCard";
 import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
-import { AlertIcon, BoltIcon, CheckIcon } from "@/components/Icons";
+import {
+  AlertIcon,
+  BoltIcon,
+  CheckIcon,
+  CodeIcon,
+  SmartphoneIcon,
+  BotIcon,
+  PaletteIcon,
+  TrendingUpIcon,
+  VideoIcon,
+} from "@/components/Icons";
 import { STATS } from "@/lib/stats";
 
 const MQ_ITEMS = [
@@ -27,39 +37,39 @@ const MQ_ITEMS = [
 const SERVICE_TEASERS = [
   {
     href: "/web-design-development",
-    num: "01",
+    Icon: CodeIcon,
     title: "Web Design & Development",
     desc: "Full-stack web apps, admin dashboards and business websites built to convert visitors into clients.",
   },
   {
     href: "/uiux-app",
-    num: "02",
+    Icon: SmartphoneIcon,
     title: "UI/UX & App",
     desc: "Cross-platform mobile apps, UI/UX design and full end-to-end MVP builds, from idea to live product.",
   },
   {
     href: "/ai",
-    num: "03",
+    Icon: BotIcon,
     title: "AI & Intelligent Systems",
     desc: "Chatbots, document processing and AI-powered features trained on your data.",
   },
   {
     href: "/branding",
-    num: "04",
+    Icon: PaletteIcon,
     title: "Branding & Logo Design",
-    desc: "Brand strategy and full identity design — logo, colour system, packaging and signage.",
+    desc: "Brand strategy and full identity design: logo, colour system, packaging and signage.",
   },
   {
     href: "/marketing",
-    num: "05",
+    Icon: TrendingUpIcon,
     title: "Marketing",
     desc: "SEO optimisation and digital marketing campaigns that grow your reach and ROI.",
   },
   {
     href: "/video-editing",
-    num: "06",
+    Icon: VideoIcon,
     title: "Video Editing",
-    desc: "Video editing and motion graphics — promos and social content polished enough to stop the scroll.",
+    desc: "Video editing and motion graphics: promos and social content polished enough to stop the scroll.",
   },
 ];
 
@@ -75,7 +85,7 @@ const WHY_STAGES = [
     key: "soln",
     Icon: BoltIcon,
     tag: "Solution",
-    title: "We validate, architect, and ship — fast, clean, production-ready.",
+    title: "We validate, architect, and ship: fast, clean, production-ready.",
     body: "Years building distributed systems at a fintech startup taught us how to move quickly without cutting corners. Every line of code is intentional.",
   },
   {
@@ -83,7 +93,7 @@ const WHY_STAGES = [
     Icon: CheckIcon,
     tag: "Outcome",
     title: "A working product you can demo, launch, or scale from day one.",
-    body: "Not a prototype. A real system — tested, documented, deployed, and ready for users. Backed by two weeks of post-launch support at no extra charge.",
+    body: "Not a prototype. A real system: tested, documented, deployed, and ready for users. Backed by two weeks of post-launch support at no extra charge.",
   },
 ];
 
@@ -165,7 +175,7 @@ export default function Home() {
               marginRight: "auto",
             }}
           >
-            Moving fast without direction is just chaos. We ship leverage — every decision is
+            Moving fast without direction is just chaos. We ship leverage: every decision is
             backed by strategy, every line of code has purpose.
           </p>
         </Reveal>
@@ -178,14 +188,16 @@ export default function Home() {
             <div className="ey">What We Build</div>
             <h2 className="sh">Services</h2>
             <p className="ssub">
-              End-to-end engineering across web, mobile, AI &amp; delivery — explore each
+              End-to-end engineering across web, mobile, AI &amp; delivery. Explore each
               specialisation in detail.
             </p>
           </Reveal>
           <Reveal className="svc-grid" delay="d1">
             {SERVICE_TEASERS.map((s) => (
               <TiltCard href={s.href} intensity={{ x: 10, y: -8 }} className="svc-card svc-teaser" key={s.href}>
-                <div className="svc-ico">{s.num}</div>
+                <div className="svc-ico">
+                  <s.Icon />
+                </div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <div className="svc-teaser-link">
@@ -210,7 +222,7 @@ export default function Home() {
             Clean code. <em style={{ color: "var(--accent)", fontStyle: "italic" }}>Real systems.</em>
           </h2>
           <p style={{ fontSize: 15, color: "var(--ink2)", marginTop: 16, lineHeight: 1.84 }}>
-            Every project ships with full documentation, unit tests and a deployment guide — so
+            Every project ships with full documentation, unit tests and a deployment guide, so
             you&apos;re never left in the dark.
           </p>
           <div className="proof-row">

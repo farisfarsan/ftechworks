@@ -274,7 +274,8 @@ nav.scrolled .logo-img{height:21px}
 .svc-card:hover{transform:var(--card-hover-lift)}
 .svc-card:hover::before{transform:scaleY(1)}
 .svc-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink3);letter-spacing:.15em;margin-bottom:10px}
-.svc-ico{width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:rgba(var(--accentRgb),.09);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:10px;border:1px solid rgba(var(--accentRgb),.14);transition:background .25s}
+.svc-ico{width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:rgba(var(--accentRgb),.09);border-radius:8px;color:var(--accent);margin-bottom:10px;border:1px solid rgba(var(--accentRgb),.14);transition:background .25s}
+.svc-ico svg{width:17px;height:17px}
 .svc-card:hover .svc-ico{background:rgba(var(--accentRgb),.16)}
 .svc-card h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:5px;line-height:1.28}
 .svc-card p{font-size:12.5px;color:var(--ink2);line-height:1.6}

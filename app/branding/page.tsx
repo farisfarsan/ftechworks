@@ -5,7 +5,7 @@ import { BASE_FAQS } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Branding & Logo Design",
   description:
-    "Brand strategy and full identity design, built to hold up everywhere your business shows up — positioning, logo, colour system, packaging and signage.",
+    "Brand strategy and full identity design, built to hold up everywhere your business shows up: positioning, logo, colour system, packaging and signage.",
   alternates: { canonical: "/branding" },
 };
 
@@ -15,9 +15,9 @@ export default function BrandingPage() {
       path="/branding"
       eyebrow="Branding"
       title="Identity, crafted."
-      subtitle="Brand strategy and full identity design, built to hold up everywhere your business shows up — positioning, logo, colour system, packaging and signage."
+      subtitle="Brand strategy and full identity design, built to hold up everywhere your business shows up: positioning, logo, colour system, packaging and signage."
       intro={[
-        "We build brand identities designed to work everywhere your business actually shows up — not just on a screen. Strategy and positioning come first, then the wordmark, colour system and recurring patterns that hold it all together.",
+        "We build brand identities designed to work everywhere your business actually shows up, not just on a screen. Strategy and positioning come first, then the wordmark, colour system and recurring patterns that hold it all together.",
         "From there we carry the identity into the physical world: packaging, takeaway containers, staff uniforms and illuminated shopfront signage, so the brand stays consistent from an Instagram post to the front of the building.",
       ]}
       services={[
@@ -28,7 +28,7 @@ export default function BrandingPage() {
         },
         {
           title: "Branding & Logo Design",
-          desc: "Full brand identity design, built to hold up everywhere the business shows up — logo, colour system, packaging and signage.",
+          desc: "Full brand identity design, built to hold up everywhere the business shows up: logo, colour system, packaging and signage.",
           tags: ["Logo Design", "Brand Identity", "Packaging", "Signage", "Figma"],
         },
       ]}
@@ -37,10 +37,10 @@ export default function BrandingPage() {
         "Logo design explored across multiple concepts",
         "Colour palette and recurring pattern system",
         "Complete visual identity and design system",
-        "Packaging design — cups, containers and labels",
+        "Packaging design: cups, containers and labels",
         "Staff apron and uniform branding",
         "Illuminated shopfront signage design",
-        "Full handoff — every source file is yours",
+        "Full handoff: every source file is yours",
       ]}
       stack={[
         "Figma",
@@ -55,11 +55,11 @@ export default function BrandingPage() {
       faqs={[
         {
           q: "What's included in a full brand identity?",
-          a: "Strategy and positioning first, then the logo explored across multiple concepts, a colour palette and a recurring pattern system — pulled together into a complete visual identity and design system.",
+          a: "Strategy and positioning first, then the logo explored across multiple concepts, a colour palette and a recurring pattern system, pulled together into a complete visual identity and design system.",
         },
         {
           q: "Do you design physical items or just digital files?",
-          a: "Both. We carry the identity onto real packaging like cups and takeaway containers, staff aprons and uniforms, and illuminated shopfront signage — so the brand holds up everywhere the business shows up, not just on a screen.",
+          a: "Both. We carry the identity onto real packaging like cups and takeaway containers, staff aprons and uniforms, and illuminated shopfront signage, so the brand holds up everywhere the business shows up, not just on a screen.",
         },
         {
           q: "Do we own the final files?",
@@ -68,7 +68,7 @@ export default function BrandingPage() {
         ...BASE_FAQS,
       ]}
       ctaTitle="Need a brand identity?"
-      ctaBody="Tell us what you're building — we reply within 12 hours with honest advice and a clear plan."
+      ctaBody="Tell us what you're building. We reply within 12 hours with honest advice and a clear plan."
     />
   );
 }

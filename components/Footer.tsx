@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="footer-col footer-brand">
           <Image src="/logo.png" alt="Ftechworks" width={211} height={26} className="logo-img" />
           <p>
-            Websites, apps, AI automation, marketing, design and video — engineered end-to-end,
+            Websites, apps, AI automation, marketing, design and video: engineered end-to-end,
             founder-led from first call to launch.
           </p>
           <a href={`mailto:${CONTACT_EMAIL}`} className="footer-mail">

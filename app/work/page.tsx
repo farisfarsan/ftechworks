@@ -13,7 +13,7 @@ const TILT = { x: 10, y: -8 };
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Real systems, built to solve real problems — from solo founders to enterprise clients worldwide.",
+    "Real systems, built to solve real problems, from solo founders to enterprise clients worldwide.",
   alternates: { canonical: "/work" },
 };
 
@@ -40,7 +40,7 @@ export default function WorkPage() {
             <div className="ey">Portfolio</div>
             <h1 className="sh">Built with care.</h1>
             <p className="ssub" style={{ marginBottom: 0 }}>
-              Real systems, built to solve real problems — from solo founders to enterprise
+              Real systems, built to solve real problems, from solo founders to enterprise
               clients worldwide.
             </p>
           </Reveal>
@@ -78,9 +78,9 @@ export default function WorkPage() {
                 </div>
                 <div className="wcard-body">
                   <div className="wcard-tag">Mobile App · Landing Page</div>
-                  <h3>Grytt — Fitness OS</h3>
+                  <h3>Grytt: Fitness OS</h3>
                   <p>
-                    High-converting landing page for a fitness accountability app — app store
+                    High-converting landing page for a fitness accountability app, with app store
                     CTAs, animated UI showcase and waitlist integration.
                   </p>
                   <div className="wcard-pills">
@@ -111,7 +111,7 @@ export default function WorkPage() {
                   <div className="wcard-tag">Mobile &amp; Web App · PropTech</div>
                   <h3>Flatkare</h3>
                   <p>
-                    Modern apartment management app connecting residents and property managers —
+                    Modern apartment management app connecting residents and property managers,
                     rent &amp; utility tracking, maintenance requests, community announcements and
                     secure document sharing in one place.
                   </p>
@@ -152,7 +152,7 @@ export default function WorkPage() {
                   <div className="wcard-tag">Business Website · Design &amp; Build</div>
                   <h3>Compass Modern Business SPC</h3>
                   <p>
-                    Full business website for an Oman-based consultancy — responsive design,
+                    Full business website for an Oman-based consultancy: responsive design,
                     multi-section layout, SEO-optimised and live in production.
                   </p>
                   <div className="wcard-pills">
@@ -188,7 +188,7 @@ export default function WorkPage() {
                   <div className="wcard-tag">Business Website · Design &amp; Build</div>
                   <h3>Tawazon</h3>
                   <p>
-                    Corporate website currently in active development — bilingual Arabic/English
+                    Corporate website currently in active development: bilingual Arabic/English
                     layout, brand-aligned design system and SEO-ready structure from day one.
                   </p>
                   <div className="wcard-pills">
@@ -231,7 +231,7 @@ export default function WorkPage() {
                   <div className="wcard-tag">Web App · Dashboard</div>
                   <h3>Work Dashboard</h3>
                   <p>
-                    Project management dashboard for tracking tasks, deadlines and team workload —
+                    Project management dashboard for tracking tasks, deadlines and team workload,
                     live progress tracking, analytics and reminders in one clean interface.
                   </p>
                   <div className="wcard-pills">
@@ -253,7 +253,7 @@ export default function WorkPage() {
                 <div className="wcard-tag">Mobile App · Landing Page</div>
                 <h3>Landing Page Design</h3>
                 <p>
-                  High-converting app landing page design work — built to turn visitors into
+                  High-converting app landing page design work, built to turn visitors into
                   customers. Clean hero sections, scannable feature layouts and a clear path to the
                   call-to-action, all designed to load fast and look sharp on any device.
                 </p>
@@ -284,14 +284,14 @@ export default function WorkPage() {
                 <h3>Samak Restaurant</h3>
                 <p>
                   Full brand identity for a seafood restaurant, designed to work everywhere the
-                  business shows up — not just on a screen. We built the fish-integrated wordmark,
+                  business shows up, not just on a screen. We built the fish-integrated wordmark,
                   a recurring scale pattern and a colour system, then carried it across real
                   packaging and signage.
                 </p>
                 <ul className="brand-points">
-                  <li>Logo design — fish-integrated wordmark, multiple concepts</li>
+                  <li>Logo design: fish-integrated wordmark, multiple concepts</li>
                   <li>Colour palette &amp; recurring pattern system</li>
-                  <li>Packaging application — cups &amp; takeaway containers</li>
+                  <li>Packaging application: cups &amp; takeaway containers</li>
                   <li>Staff apron &amp; uniform branding</li>
                   <li>Illuminated shopfront signage design</li>
                 </ul>
@@ -313,7 +313,7 @@ export default function WorkPage() {
         <div className="sec-in">
           <Reveal className="cta-band">
             <h3>Like what you see?</h3>
-            <p>Tell us what you&apos;re building — we reply within 12 hours with honest advice and a clear plan.</p>
+            <p>Tell us what you&apos;re building. We reply within 12 hours with honest advice and a clear plan.</p>
             <div className="cta-band-btns">
               <RippleLink href="/#contact" className="btn-lq">
                 Start a Project →

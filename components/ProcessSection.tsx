@@ -5,7 +5,7 @@ export default function ProcessSection({
   id,
   className = "sec",
   headingClass = "sh2",
-  subtitle = "Four clear steps built to protect your time, money and vision — from first call to launch day and beyond.",
+  subtitle = "Four clear steps built to protect your time, money and vision, from first call to launch day and beyond.",
 }: {
   id?: string;
   className?: string;

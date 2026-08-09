@@ -154,7 +154,7 @@ export default function HeroSection() {
             ))}
           </h1>
           <p className="hero-sub">
-            Custom websites, web apps, AI automation, branding, SEO and digital marketing —
+            Custom websites, web apps, AI automation, branding, SEO and digital marketing:
             built end-to-end with our founder in the room, not handed off down the chain.
           </p>
           <div className="hero-cta-row">

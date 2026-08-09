@@ -14,21 +14,21 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Technology for Business Growth`,
-    template: `%s — ${SITE_NAME}`,
+    default: `${SITE_NAME} | Technology for Business Growth`,
+    template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — Technology for Business Growth`,
+    title: `${SITE_NAME} | Technology for Business Growth`,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — Technology for Business Growth`,
+    title: `${SITE_NAME} | Technology for Business Growth`,
     description: SITE_DESCRIPTION,
   },
 };
