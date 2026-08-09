@@ -2,10 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import gsap from "gsap";
 import Magnetic from "@/components/Magnetic";
 import { scrollToHash } from "@/lib/scrollToHash";
-import { onPreloaderDone } from "@/lib/preloaderState";
 
 const LINES = ["WE BUILD", "DIGITAL", "EXPERIENCES", "THAT SCALE."];
 const ACCENT_LINE = 2;
@@ -132,41 +130,8 @@ export default function HeroSection() {
     };
   }, []);
 
-  // Intro: line-masked title rise + staggered UI, starting as the preloader exits.
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      root.classList.remove("anim-pending");
-      return;
-    }
-
-    let tl: gsap.core.Timeline | null = null;
-    const off = onPreloaderDone(() => {
-      tl = gsap.timeline({
-        onComplete: () => {
-          root.classList.remove("anim-pending");
-          gsap.set(root.querySelectorAll(".ht-in,.badge,.hero-sub,.hero-cta-row,.scroll-ind"), {
-            clearProps: "transform,opacity,visibility",
-          });
-        },
-      });
-      tl.fromTo(".hero .badge", { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, ease: "power3.out" })
-        .to(".hero .ht-in", { y: 0, duration: 1.05, ease: "power4.out", stagger: 0.09 }, "-=0.3")
-        .fromTo(".hero .hero-sub", { y: 26, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out" }, "-=0.55")
-        .fromTo(".hero .hero-cta-row", { y: 26, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, ease: "power3.out" }, "-=0.5")
-        .fromTo(".hero .scroll-ind", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.6 }, "-=0.6");
-    });
-
-    return () => {
-      off();
-      tl?.kill();
-    };
-  }, []);
-
   return (
-    <section className="hero anim-pending" id="home" ref={rootRef}>
+    <section className="hero" id="home" ref={rootRef}>
       <div className="hero-bg" aria-hidden="true">
         <div className="hero-grid-bg"></div>
         <canvas className="hero-canvas" ref={canvasRef}></canvas>

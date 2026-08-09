@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import ThemeScript from "@/components/ThemeScript";
-import Preloader from "@/components/Preloader";
 import SmoothScroll from "@/components/SmoothScroll";
 import CursorGlow from "@/components/CursorGlow";
 import CustomCursor from "@/components/CustomCursor";
@@ -51,7 +50,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd />
       </head>
       <body>
-        <Preloader />
         <SmoothScroll />
         <CursorGlow />
         <CustomCursor />
