@@ -1,0 +1,21 @@
+<html>
+  <head></head>
+  <body>
+    <!--
+      Netlify Forms deploy-time detection for the App Router.
+      The Next.js Runtime v5 doesn't scan rendered pages for forms, so this
+      static file declares the form's shape for Netlify's build bot.
+      The real form (components/InquiryForm.tsx) POSTs here at runtime.
+      See https://opennext.js.org/netlify/forms
+    -->
+    <form name="inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="inquiry" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <input name="phone" type="tel" />
+      <input name="service" type="text" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

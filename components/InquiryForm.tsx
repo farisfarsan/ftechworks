@@ -72,10 +72,10 @@ export default function InquiryForm() {
 
     setStatus("submitting");
     try {
-      const res = await fetch("/", {
+      const res = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "inquiry", ...values }),
+        body: encode({ "form-name": "inquiry", "bot-field": String(f.get("bot-field") ?? ""), ...values }),
       });
       if (!res.ok) throw new Error("Submission failed");
       setStatus("success");
@@ -99,9 +99,6 @@ export default function InquiryForm() {
       className="c-form"
       id="inquiryForm"
       name="inquiry"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
       onSubmit={onSubmit}
       noValidate
     >
