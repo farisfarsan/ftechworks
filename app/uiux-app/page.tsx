@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function UiuxAppPage() {
   return (
     <ServicePageLayout
+      path="/uiux-app"
       eyebrow="UI/UX & App"
       title="Apps people actually enjoy using."
       subtitle="Cross-platform mobile apps, user-centred UI/UX design and full end-to-end MVP builds — from first wireframe to a live product real users can try."

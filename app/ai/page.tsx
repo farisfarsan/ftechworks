@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function AiPage() {
   return (
     <ServicePageLayout
+      path="/ai"
       eyebrow="AI & Intelligent Systems"
       title="Intelligence, applied."
       subtitle="Chatbots, document processing and AI-powered features — practical AI shipped into real products, trained on your own data."

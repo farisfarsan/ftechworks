@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function VideoEditingPage() {
   return (
     <ServicePageLayout
+      path="/video-editing"
       eyebrow="Video Editing"
       title="Footage, cut into stories."
       subtitle="Professional video editing and motion design — promos, ads and social content polished enough to stop the scroll."

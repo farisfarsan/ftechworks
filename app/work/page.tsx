@@ -5,6 +5,8 @@ import WorkFilters from "@/components/WorkFilters";
 import AutoScrollGallery from "@/components/AutoScrollGallery";
 import TiltCard from "@/components/TiltCard";
 import RippleLink from "@/components/RippleLink";
+import JsonLdScript from "@/components/JsonLdScript";
+import { SITE_URL } from "@/lib/siteConfig";
 
 const TILT = { x: 10, y: -8 };
 
@@ -18,6 +20,16 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
+      <JsonLdScript
+        data={{
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Work", item: `${SITE_URL}/work` },
+          ],
+        }}
+      />
+
       {/* PAGE HEADER */}
       <section className="sec" style={{ paddingTop: 150, paddingBottom: 60 }}>
         <div className="sec-in">

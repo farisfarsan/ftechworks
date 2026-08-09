@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function WebDesignDevelopmentPage() {
   return (
     <ServicePageLayout
+      path="/web-design-development"
       eyebrow="Web Design & Development"
       title="Sites and apps built to convert."
       subtitle="Full-stack web apps, dashboards and business websites — engineered for speed, clarity and conversion, from first line of code to launch day."

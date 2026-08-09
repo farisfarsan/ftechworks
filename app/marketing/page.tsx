@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function MarketingPage() {
   return (
     <ServicePageLayout
+      path="/marketing"
       eyebrow="Marketing"
       title="Grow your reach, measurably."
       subtitle="SEO optimisation and digital marketing campaigns built on data — more visibility, more qualified traffic, more return on every dollar spent."

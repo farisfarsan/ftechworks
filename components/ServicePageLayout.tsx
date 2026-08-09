@@ -3,6 +3,8 @@ import Reveal from "@/components/Reveal";
 import RippleLink from "@/components/RippleLink";
 import ProcessSection from "@/components/ProcessSection";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
+import JsonLdScript from "@/components/JsonLdScript";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export type ServiceBlock = {
   title: string;
@@ -11,6 +13,7 @@ export type ServiceBlock = {
 };
 
 export default function ServicePageLayout({
+  path,
   eyebrow,
   title,
   subtitle,
@@ -23,6 +26,7 @@ export default function ServicePageLayout({
   ctaTitle,
   ctaBody,
 }: {
+  path: string;
   eyebrow: string;
   title: string;
   subtitle: string;
@@ -35,8 +39,43 @@ export default function ServicePageLayout({
   ctaTitle: string;
   ctaBody: string;
 }) {
+  const url = `${SITE_URL}${path}`;
+
   return (
     <>
+      <JsonLdScript
+        data={{
+          "@type": "Service",
+          name: title,
+          serviceType: eyebrow,
+          description: subtitle,
+          url,
+          provider: { "@id": `${SITE_URL}/#organization` },
+          areaServed: "Worldwide",
+        }}
+      />
+      <JsonLdScript
+        data={{
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: title, item: url },
+          ],
+        }}
+      />
+      {faqs && faqs.length > 0 && (
+        <JsonLdScript
+          data={{
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }}
+        />
+      )}
+
       {/* PAGE HEADER */}
       <section className="sec svc-hero" style={{ paddingTop: 150, paddingBottom: 60 }}>
         <div className="sec-in">

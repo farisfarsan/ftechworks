@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function BrandingPage() {
   return (
     <ServicePageLayout
+      path="/branding"
       eyebrow="Branding"
       title="Identity, crafted."
       subtitle="Brand strategy and full identity design, built to hold up everywhere your business shows up — positioning, logo, colour system, packaging and signage."
