@@ -5,6 +5,7 @@ import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
 import { AlertIcon, BoltIcon, CheckIcon } from "@/components/Icons";
+import { STATS } from "@/lib/stats";
 
 const MQ_ITEMS = [
   "Web Applications",
@@ -96,18 +97,16 @@ export default function Home() {
           content isn't silently dropped */}
       <div className="sec" style={{ padding: "48px 60px" }}>
         <div className="sec-in" style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
-          <div className="stat" style={{ flex: "unset", padding: 0 }}>
-            <Counter count={3} suffix="+" />
-            <div className="stat-l">Years in Production</div>
-          </div>
-          <div className="stat" style={{ flex: "unset", padding: 0 }}>
-            <div className="stat-n">Team</div>
-            <div className="stat-l">Experienced Devs</div>
-          </div>
-          <div className="stat" style={{ flex: "unset", padding: 0 }}>
-            <Counter count={14} suffix="" />
-            <div className="stat-l">Services Offered</div>
-          </div>
+          {STATS.map((s) => (
+            <div className="stat" style={{ flex: "unset", padding: 0 }} key={s.label}>
+              {"count" in s ? (
+                <Counter count={s.count} suffix={s.suffix} />
+              ) : (
+                <div className="stat-n">{s.todo}</div>
+              )}
+              <div className="stat-l">{s.label}</div>
+            </div>
+          ))}
         </div>
       </div>
 
