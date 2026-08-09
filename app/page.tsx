@@ -4,8 +4,6 @@ import TiltCard from "@/components/TiltCard";
 import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
-import FounderSection from "@/components/FounderSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
 import { AlertIcon, BoltIcon, CheckIcon } from "@/components/Icons";
 import { STATS } from "@/lib/stats";
 
@@ -147,12 +145,6 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-
-      {/* FOUNDER */}
-      <FounderSection />
-
-      {/* CASE STUDIES */}
-      <CaseStudiesSection />
 
       {/* BREAK 1 */}
       <div className="vid-sec">
