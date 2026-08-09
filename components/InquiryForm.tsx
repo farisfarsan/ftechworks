@@ -3,6 +3,7 @@
 import { useState, type FocusEvent, type FormEvent } from "react";
 import { ripple } from "@/lib/ripple";
 import { WA_LINK } from "@/components/WhatsAppFloat";
+import { FORMSPREE_ENDPOINT } from "@/lib/siteConfig";
 
 type Field = "name" | "email" | "phone" | "service" | "message";
 type Errors = Partial<Record<Field, string>>;
@@ -28,12 +29,6 @@ function validateField(field: Field, value: string): string {
       if (!v) return "Tell us a little about the project.";
       return v.length >= 10 ? "" : "A few more details would help (10+ characters).";
   }
-}
-
-function encode(data: Record<string, string>) {
-  return Object.entries(data)
-    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
-    .join("&");
 }
 
 export default function InquiryForm() {
@@ -72,10 +67,10 @@ export default function InquiryForm() {
 
     setStatus("submitting");
     try {
-      const res = await fetch("/__forms.html", {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "inquiry", "bot-field": String(f.get("bot-field") ?? ""), ...values }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...values, _gotcha: String(f.get("_gotcha") ?? "") }),
       });
       if (!res.ok) throw new Error("Submission failed");
       setStatus("success");
@@ -95,18 +90,11 @@ export default function InquiryForm() {
   }
 
   return (
-    <form
-      className="c-form"
-      id="inquiryForm"
-      name="inquiry"
-      onSubmit={onSubmit}
-      noValidate
-    >
-      <input type="hidden" name="form-name" value="inquiry" />
+    <form className="c-form" id="inquiryForm" onSubmit={onSubmit} noValidate>
       <p style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
         <label>
           Leave this field blank
-          <input name="bot-field" tabIndex={-1} autoComplete="off" />
+          <input name="_gotcha" tabIndex={-1} autoComplete="off" />
         </label>
       </p>
 
