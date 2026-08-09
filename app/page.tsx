@@ -218,6 +218,14 @@ export default function Home() {
             Every project ships with full documentation, unit tests and a deployment guide — so
             you&apos;re never left in the dark.
           </p>
+          <div className="proof-row">
+            {["Full Documentation", "Unit Tests", "Deployment Guide"].map((p) => (
+              <div className="proof-pt" key={p}>
+                <CheckIcon />
+                <span>{p}</span>
+              </div>
+            ))}
+          </div>
         </Reveal>
       </div>
 
