@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/siteConfig";
+import { CASE_STUDIES } from "@/lib/caseStudies";
 
 const ROUTES = [
   "",
@@ -10,6 +11,7 @@ const ROUTES = [
   "/branding",
   "/marketing",
   "/video-editing",
+  ...CASE_STUDIES.map((c) => `/work/${c.slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

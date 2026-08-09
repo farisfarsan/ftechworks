@@ -41,8 +41,8 @@ export const PROCESS_STEPS = [
     icon: "⚡",
     num: "03",
     title: "Build",
-    desc: "We build iteratively with daily updates — AI-assisted development means 2× the velocity without sacrificing quality or test coverage.",
-    chips: ["2× Velocity", "AI-Assisted", "Daily Updates", "Test Coverage"],
+    desc: "We build iteratively with daily updates — every commit is code-reviewed, tested and documented as we go, so nothing reaches you unfinished.",
+    chips: ["Daily Updates", "Code Review", "Test Coverage", "Documented as We Build"],
   },
   {
     icon: "🚀",

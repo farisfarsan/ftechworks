@@ -2,6 +2,7 @@ import Reveal from "@/components/Reveal";
 import InquiryForm from "@/components/InquiryForm";
 import { WA_LINK } from "@/components/WhatsAppFloat";
 import { MailIcon, WhatsAppIcon, LinkedInIcon, InstagramIcon } from "@/components/Icons";
+import { CONTACT_EMAIL } from "@/lib/siteConfig";
 
 // Each step restates something already published in the process section.
 const NEXT_STEPS = [
@@ -63,7 +64,7 @@ export default function ContactSection() {
                   <WhatsAppIcon />
                   Chat on WhatsApp
                 </a>
-                <a href="mailto:ftechworks8@gmail.com" className="direct-mail">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="direct-mail">
                   <MailIcon />
                   Email us
                 </a>

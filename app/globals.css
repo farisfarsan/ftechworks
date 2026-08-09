@@ -313,6 +313,46 @@ nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(30px) saturate(1.7);b
 .wcard-pill{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 10px;background:rgba(var(--accentRgb),.09);border:1px solid rgba(var(--accentRgb),.24);border-radius:99px;color:var(--accent);letter-spacing:.04em;transition:all .22s}
 .wcard:hover .wcard-pill,.brand-case:hover .wcard-pill{background:rgba(var(--accentRgb),.16);border-color:rgba(var(--accentRgb),.42)}
 
+/* CASE STUDIES */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case-card{background:var(--card);border:1px solid var(--b2);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color .3s,box-shadow .3s;scroll-margin-top:90px}
+.case-card:hover{border-color:rgba(var(--accentRgb),.45);box-shadow:0 20px 52px rgba(0,0,0,.3)}
+.case-thumb{height:150px;display:flex;align-items:center;justify-content:center;padding:20px;flex-shrink:0}
+.case-thumb img{width:100%;height:100%;object-fit:contain}
+.case-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.case-tag{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;opacity:.85}
+.case-body h3{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.25}
+.case-line{font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:8px}
+.case-line strong{color:var(--ink);font-weight:600}
+.case-outcome{display:flex;flex-direction:column;gap:2px;margin-top:8px;padding:11px 14px;background:rgba(var(--accentRgb),.07);border:1px solid rgba(var(--accentRgb),.22);border-radius:10px;font-size:13.5px;color:var(--accent);font-weight:600}
+.case-outcome span{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);font-weight:400}
+.case-cta{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);margin-top:14px;transition:color .22s,gap .22s}
+.case-card:hover .case-cta{color:var(--accent);gap:12px}
+@media(max-width:1080px){.case-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.case-grid{grid-template-columns:1fr}}
+.case-detail{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+.case-detail-media{border-radius:20px;overflow:hidden;padding:40px;display:flex;align-items:center;justify-content:center;min-height:280px}
+.case-detail-media img{width:100%;max-width:280px;object-fit:contain}
+.case-detail-body h2{margin-bottom:10px}
+.case-detail-body p{font-size:14.5px;line-height:1.8;color:var(--ink2);margin-bottom:24px;max-width:60ch}
+.case-detail-live{display:inline-flex;margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+@media(max-width:900px){.case-detail{grid-template-columns:1fr}}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.price-card{position:relative;background:var(--card);border:1px solid var(--b2);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column}
+.price-card.featured{border-color:rgba(var(--accentRgb),.5);box-shadow:0 20px 52px rgba(0,0,0,.28)}
+.price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#140700;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:99px}
+.price-name{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:14px}
+.price-fig{display:flex;align-items:baseline;gap:6px;font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;color:var(--ink);margin-bottom:22px}
+.price-from{font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:var(--ink3)}
+.price-period{font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:var(--ink3)}
+.price-bullets{display:flex;flex-direction:column;gap:12px;margin-bottom:26px;flex:1}
+.price-bullets li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.price-bullets svg{width:15px;height:15px;color:var(--accent);flex-shrink:0;margin-top:2px}
+.price-card .btn-lq,.price-card .btn-hollow{justify-content:center;width:100%;padding:14px 20px}
+@media(max-width:1080px){.price-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+
 /* BRANDING */
 .brand-case{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--b2);border-radius:20px;padding:20px;transition:border-color .3s,box-shadow .3s;scroll-margin-top:90px}
 .brand-case:hover{border-color:rgba(var(--accentRgb),.3);box-shadow:0 20px 52px rgba(0,0,0,.25)}
@@ -530,6 +570,18 @@ html.lenis,html.lenis body{height:auto}
 .gcard:hover .gcard-link{gap:12px}
 @media(max-width:1080px){.gsvc-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.gsvc-grid{grid-template-columns:1fr}}
+
+/* FOUNDER */
+.founder-card{display:flex;gap:36px;align-items:center;background:var(--card);border:1px solid var(--b2);border-radius:20px;padding:36px 40px}
+.founder-photo{width:120px;height:120px;border-radius:50%;flex-shrink:0;overflow:hidden;background:var(--card2);border:1px dashed var(--b2);display:flex;align-items:center;justify-content:center;color:var(--ink3)}
+.founder-photo svg{width:52px;height:52px}
+.founder-photo img{width:100%;height:100%;object-fit:cover}
+.founder-body h2{margin-bottom:4px}
+.founder-role{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.founder-bio{font-size:14.5px;line-height:1.8;color:var(--ink2);max-width:60ch;margin-bottom:16px}
+.founder-linkedin{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:var(--accent);text-decoration:none}
+.founder-linkedin svg{width:16px;height:16px}
+@media(max-width:640px){.founder-card{flex-direction:column;text-align:center;padding:32px 24px}.founder-bio{max-width:none}}
 
 /* ABOUT */
 .about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start;margin-bottom:64px}

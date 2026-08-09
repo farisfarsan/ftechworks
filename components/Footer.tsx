@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CONTACT_EMAIL } from "@/lib/siteConfig";
 
 const SERVICE_LINKS = [
   { href: "/web-design-development", label: "Web Design & Dev" },
@@ -18,7 +19,7 @@ const COMPANY_LINKS = [
 ];
 
 const SOCIALS = [
-  { href: "mailto:ftechworks8@gmail.com", label: "Email" },
+  { href: `mailto:${CONTACT_EMAIL}`, label: "Email" },
   {
     href: "https://wa.me/919061894005?text=Hi%20Team%20Ftechworks%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project.",
     label: "WhatsApp",
@@ -39,8 +40,8 @@ export default function Footer() {
             Websites, apps, AI automation, marketing, design and video — engineered end-to-end,
             founder-led from first call to launch.
           </p>
-          <a href="mailto:ftechworks8@gmail.com" className="footer-mail">
-            ftechworks8@gmail.com
+          <a href={`mailto:${CONTACT_EMAIL}`} className="footer-mail">
+            {CONTACT_EMAIL}
           </a>
           <div className="footer-status">
             <span className="pulse"></span>

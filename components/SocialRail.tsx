@@ -1,8 +1,9 @@
 import { WA_LINK } from "@/components/WhatsAppFloat";
 import { MailIcon, WhatsAppIcon, LinkedInIcon, InstagramIcon } from "@/components/Icons";
+import { CONTACT_EMAIL } from "@/lib/siteConfig";
 
 const LINKS = [
-  { href: "mailto:ftechworks8@gmail.com", label: "Email", Icon: MailIcon },
+  { href: `mailto:${CONTACT_EMAIL}`, label: "Email", Icon: MailIcon },
   { href: WA_LINK, label: "WhatsApp", Icon: WhatsAppIcon },
   { href: "https://www.linkedin.com/company/135145399/", label: "LinkedIn", Icon: LinkedInIcon },
   {
