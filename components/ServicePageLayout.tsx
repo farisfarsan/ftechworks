@@ -205,9 +205,9 @@ export default function ServicePageLayout({
               <RippleLink href="/#contact" className="btn-lq">
                 Start a Project →
               </RippleLink>
-              <RippleLink href="/work" className="btn-hollow">
-                See our Work
-              </RippleLink>
+              <Link href="/work" className="link-arrow">
+                See our Work <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </Reveal>
         </div>

@@ -164,7 +164,7 @@ export default function HeroSection() {
                 <span>Start Your Project {ArrowIcon}</span>
               </a>
             </Magnetic>
-            <Link href="/work" className="hero-secondary-link">
+            <Link href="/work" className="link-arrow">
               View Portfolio <span aria-hidden="true">→</span>
             </Link>
           </div>

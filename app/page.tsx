@@ -99,11 +99,7 @@ export default function Home() {
         <div className="sec-in" style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
           {STATS.map((s) => (
             <div className="stat" style={{ flex: "unset", padding: 0 }} key={s.label}>
-              {"count" in s ? (
-                <Counter count={s.count} suffix={s.suffix} />
-              ) : (
-                <div className="stat-n">{s.todo}</div>
-              )}
+              <Counter count={s.count} suffix={s.suffix} />
               <div className="stat-l">{s.label}</div>
             </div>
           ))}

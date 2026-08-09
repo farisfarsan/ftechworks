@@ -318,9 +318,9 @@ export default function WorkPage() {
               <RippleLink href="/#contact" className="btn-lq">
                 Start a Project →
               </RippleLink>
-              <RippleLink href="/" className="btn-hollow">
-                See all Services
-              </RippleLink>
+              <Link href="/" className="link-arrow">
+                See all Services <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </Reveal>
         </div>

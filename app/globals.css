@@ -174,9 +174,12 @@ nav.scrolled .logo-img{height:21px}
 .btn-lq:hover span svg{transform:translateX(4px)}
 .btn-hollow{position:relative;display:inline-flex;align-items:center;gap:9px;background:var(--glass);border:1px solid var(--glass-b);backdrop-filter:blur(12px);color:var(--ink);font-size:14.5px;font-weight:500;padding:16px 36px;border-radius:99px;text-decoration:none;transition:border-color .3s,color .3s,box-shadow .3s}
 .btn-hollow:hover{border-color:rgba(var(--accentRgb),.5);color:var(--accent);box-shadow:0 0 34px rgba(var(--accentRgb),.16)}
-.hero-secondary-link{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:500;color:var(--ink2);text-decoration:none;padding:16px 4px;transition:color .25s,gap .25s}
-.hero-secondary-link span{transition:transform .25s}
-.hero-secondary-link:hover{color:var(--accent);gap:12px}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:none;padding:16px 2px;position:relative}
+.link-arrow::after{content:'';position:absolute;left:2px;right:2px;bottom:14px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.link-arrow span{display:inline-flex;transition:transform .25s}
+.link-arrow:hover{color:var(--accent)}
+.link-arrow:hover::after{transform:scaleX(1)}
+.link-arrow:hover span{transform:translateX(4px)}
 .scroll-ind{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink3);letter-spacing:.2em;text-transform:uppercase}
 .scroll-ind span{animation:scrollBounce 1.8s ease-in-out infinite}
 @keyframes scrollBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
