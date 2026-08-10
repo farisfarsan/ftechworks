@@ -8,13 +8,13 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/siteConfig";
+import { HOMEPAGE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/siteConfig";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: SITE_NAME,
+    default: HOMEPAGE_TITLE,
     template: `%s · ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: SITE_NAME,
+    title: HOMEPAGE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
+    title: HOMEPAGE_TITLE,
     description: SITE_DESCRIPTION,
   },
 };
