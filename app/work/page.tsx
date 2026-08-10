@@ -49,6 +49,7 @@ export default function WorkPage() {
       {/* WORK */}
       <section className="sec sec-alt">
         <div className="sec-in">
+          <h2 className="sr-only">Selected Work</h2>
           <WorkFilters>
             <Reveal className="works-grid" delay="d1">
               <TiltCard
