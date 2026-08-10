@@ -10,7 +10,7 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "ProfessionalService"],
+        "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
         "@id": orgId,
         name: SITE_NAME,
         description: SITE_DESCRIPTION,
@@ -18,6 +18,13 @@ export default function JsonLd() {
         logo: `${SITE_URL}/logo.png`,
         image: `${SITE_URL}/logo.png`,
         email: CONTACT_EMAIL,
+        telephone: "+919061894005",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Malappuram",
+          addressRegion: "Kerala",
+          addressCountry: "IN",
+        },
         areaServed: "Worldwide",
         sameAs: [
           "https://www.linkedin.com/company/135145399/",
