@@ -67,6 +67,8 @@ export default function WorkPage() {
                   <img
                     src="/app/grytt.png"
                     alt="Grytt app icon"
+                    width={130}
+                    height={96}
                     style={{ width: "42%", maxWidth: 150, objectFit: "contain", borderRadius: 18 }}
                   />
                   <div
@@ -100,7 +102,14 @@ export default function WorkPage() {
                   className="wcard-thumb"
                   style={{ background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}
                 >
-                  <img src="/app/flat.png" alt="Flatkare logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+                  <img
+                    src="/app/flat.png"
+                    alt="Flatkare logo"
+                    width={281}
+                    height={78}
+                    loading="lazy"
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                  />
                   <div
                     className="wcard-overlay"
                     style={{ background: "linear-gradient(180deg,transparent 60%,rgba(255,255,255,.85) 100%)" }}
@@ -139,6 +148,9 @@ export default function WorkPage() {
                   <img
                     src="/website/compass.png"
                     alt="Compass Modern Business SPC logo"
+                    width={281}
+                    height={125}
+                    loading="lazy"
                     style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                   <div
@@ -175,6 +187,9 @@ export default function WorkPage() {
                   <img
                     src="/website/tawazon-clean.png"
                     alt="Tawazon logo"
+                    width={2696}
+                    height={1129}
+                    loading="lazy"
                     style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                   <div
@@ -201,7 +216,7 @@ export default function WorkPage() {
 
               <TiltCard intensity={TILT} className="wcard" data-cat="ai">
                 <div className="wcard-thumb">
-                  <img src="/chatboat.png" alt="AI Bot" />
+                  <img src="/chatboat.png" alt="AI Bot" width={675} height={453} loading="lazy" />
                   <div className="wcard-overlay"></div>
                   <div className="wcard-num">01</div>
                 </div>
@@ -223,7 +238,7 @@ export default function WorkPage() {
 
               <TiltCard intensity={TILT} className="wcard" data-cat="dashboard">
                 <div className="wcard-thumb">
-                  <img src="/dashboard.png" alt="Work Dashboard app screenshot" />
+                  <img src="/dashboard.png" alt="Work Dashboard app screenshot" width={400} height={300} loading="lazy" />
                   <div className="wcard-overlay"></div>
                   <div className="wcard-num">03</div>
                 </div>
@@ -245,9 +260,9 @@ export default function WorkPage() {
 
             <Reveal className="brand-case" delay="d2" data-cat="landing" style={{ marginTop: 14 }}>
               <AutoScrollGallery className="landing-gallery">
-                <img src="/landingpage/lp2.avif" alt="Landing page hero design" />
-                <img src="/landingpage/landing.avif" alt="Landing page feature section design" />
-                <img src="/landingpage/landing1.avif" alt="Landing page section design" />
+                <img src="/landingpage/lp2.avif" alt="Landing page hero design" width={384} height={384} loading="lazy" />
+                <img src="/landingpage/landing.avif" alt="Landing page feature section design" width={384} height={256} loading="lazy" />
+                <img src="/landingpage/landing1.avif" alt="Landing page section design" width={384} height={250} loading="lazy" />
               </AutoScrollGallery>
               <div className="brand-info">
                 <div className="wcard-tag">Mobile App · Landing Page</div>
@@ -274,10 +289,10 @@ export default function WorkPage() {
 
             <Reveal className="brand-case" delay="d3" data-cat="branding" style={{ marginTop: 14 }}>
               <AutoScrollGallery className="brand-gallery">
-                <img src="/branding/branding.png" alt="Samak Restaurant branded paper cups" />
-                <img src="/branding/brandin2.png" alt="Samak Restaurant branded staff apron" />
-                <img src="/branding/branding3.png" alt="Samak Restaurant branded takeaway containers" />
-                <img src="/branding/brandin4.png" alt="Samak Restaurant illuminated shopfront sign" />
+                <img src="/branding/branding.jpg" alt="Samak Restaurant branded paper cups" width={482} height={700} loading="lazy" />
+                <img src="/branding/brandin2.jpg" alt="Samak Restaurant branded staff apron" width={569} height={700} loading="lazy" />
+                <img src="/branding/branding3.jpg" alt="Samak Restaurant branded takeaway containers" width={700} height={418} loading="lazy" />
+                <img src="/branding/brandin4.jpg" alt="Samak Restaurant illuminated shopfront sign" width={700} height={400} loading="lazy" />
               </AutoScrollGallery>
               <div className="brand-info">
                 <div className="wcard-tag">Branding &amp; Logo Design · F&amp;B</div>
