@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { BASE_FAQS } from "@/lib/content";
+import { pageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Web Design & Development",
-  description:
-    "Full-stack web apps, dashboards and business websites: engineered for speed, clarity and conversion, from first line of code to launch day.",
-  alternates: { canonical: "/web-design-development" },
-};
+export const metadata = pageMetadata(
+  "Web Design & Development",
+  "Full-stack web apps, dashboards and business websites: engineered for speed, clarity and conversion, from first line of code to launch day.",
+  "/web-design-development"
+);
 
 export default function WebDesignDevelopmentPage() {
   return (

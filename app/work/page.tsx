@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import WorkFilters from "@/components/WorkFilters";
@@ -7,15 +6,15 @@ import TiltCard from "@/components/TiltCard";
 import RippleLink from "@/components/RippleLink";
 import JsonLdScript from "@/components/JsonLdScript";
 import { SITE_URL } from "@/lib/siteConfig";
+import { pageMetadata } from "@/lib/pageMetadata";
 
 const TILT = { x: 10, y: -8 };
 
-export const metadata: Metadata = {
-  title: "Work",
-  description:
-    "Real systems, built to solve real problems, from solo founders to enterprise clients worldwide.",
-  alternates: { canonical: "/work" },
-};
+export const metadata = pageMetadata(
+  "Work",
+  "Real systems, built to solve real problems, from solo founders to enterprise clients worldwide.",
+  "/work"
+);
 
 export default function WorkPage() {
   return (

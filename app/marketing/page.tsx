@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { BASE_FAQS } from "@/lib/content";
+import { pageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Marketing",
-  description:
-    "SEO optimisation and digital marketing campaigns built on data: more visibility, more qualified traffic, more return on every dollar spent.",
-  alternates: { canonical: "/marketing" },
-};
+export const metadata = pageMetadata(
+  "Marketing",
+  "SEO optimisation and digital marketing campaigns built on data: more visibility, more qualified traffic, more return on every dollar spent.",
+  "/marketing"
+);
 
 export default function MarketingPage() {
   return (

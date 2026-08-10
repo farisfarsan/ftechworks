@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { BASE_FAQS } from "@/lib/content";
+import { pageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Video Editing",
-  description:
-    "Professional video editing and motion design: promos, ads and social content polished enough to stop the scroll.",
-  alternates: { canonical: "/video-editing" },
-};
+export const metadata = pageMetadata(
+  "Video Editing",
+  "Professional video editing and motion design: promos, ads and social content polished enough to stop the scroll.",
+  "/video-editing"
+);
 
 export default function VideoEditingPage() {
   return (

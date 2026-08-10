@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { BASE_FAQS } from "@/lib/content";
+import { pageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "UI/UX & App Development",
-  description:
-    "Cross-platform mobile apps, user-centred UI/UX design and full end-to-end MVP builds: from first wireframe to a live product real users can try.",
-  alternates: { canonical: "/uiux-app" },
-};
+export const metadata = pageMetadata(
+  "UI/UX & App Development",
+  "Cross-platform mobile apps, user-centred UI/UX design and full end-to-end MVP builds: from first wireframe to a live product real users can try.",
+  "/uiux-app"
+);
 
 export default function UiuxAppPage() {
   return (

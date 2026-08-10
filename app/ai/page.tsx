@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { BASE_FAQS } from "@/lib/content";
+import { pageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "AI & Intelligent Systems",
-  description:
-    "Chatbots, document processing and AI-powered features: practical AI shipped into real products, trained on your own data.",
-  alternates: { canonical: "/ai" },
-};
+export const metadata = pageMetadata(
+  "AI & Intelligent Systems",
+  "Chatbots, document processing and AI-powered features: practical AI shipped into real products, trained on your own data.",
+  "/ai"
+);
 
 export default function AiPage() {
   return (
