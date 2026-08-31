@@ -179,41 +179,6 @@ export default function WorkPage() {
                 </div>
               </TiltCard>
 
-              <TiltCard intensity={TILT} className="wcard" data-cat="website">
-                <div
-                  className="wcard-thumb"
-                  style={{ background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}
-                >
-                  <img
-                    src="/website/tawazon-clean.png"
-                    alt="Tawazon logo"
-                    width={2696}
-                    height={1129}
-                    loading="lazy"
-                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                  />
-                  <div
-                    className="wcard-overlay"
-                    style={{ background: "linear-gradient(180deg,transparent 60%,rgba(255,255,255,.85) 100%)" }}
-                  ></div>
-                  <div className="wcard-num">02</div>
-                  <div className="wcard-live wcard-ongoing">Ongoing</div>
-                </div>
-                <div className="wcard-body">
-                  <div className="wcard-tag">Business Website · Design &amp; Build</div>
-                  <h3>Tawazon</h3>
-                  <p>
-                    Corporate website currently in active development: bilingual Arabic/English
-                    layout, brand-aligned design system and SEO-ready structure from day one.
-                  </p>
-                  <div className="wcard-pills">
-                    <span className="wcard-pill">Arabic/RTL</span>
-                    <span className="wcard-pill">SEO</span>
-                    <span className="wcard-pill">Responsive</span>
-                  </div>
-                </div>
-              </TiltCard>
-
               <TiltCard intensity={TILT} className="wcard" data-cat="ai">
                 <div className="wcard-thumb">
                   <img src="/chatboat.png" alt="AI Bot" width={675} height={453} loading="lazy" />
