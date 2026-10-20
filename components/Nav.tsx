@@ -21,6 +21,9 @@ const SERVICE_LINKS = [
   { href: "/video-editing", label: "Video Editing", hint: "Promos & motion" },
 ];
 
+const mobileRow =
+  "flex items-center justify-between border-b border-line/10 py-3.5 font-mono text-lg font-medium uppercase tracking-[.1em] text-ink";
+
 const SPY_IDS = ["home", "why", "services", "process", "contact"];
 
 export default function Nav() {
@@ -29,6 +32,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
+  const [svcOpen, setSvcOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -216,32 +220,79 @@ export default function Nav() {
               </button>
             </div>
             <ul className="mt-10 space-y-1">
-              {[
-                { l: "Why Us", h: homeHref("#why"), hash: "#why" },
-                ...SERVICE_LINKS.map((s) => ({ l: s.label, h: s.href })),
-                { l: "Work", h: "/work" },
-                { l: "Process", h: homeHref("#process"), hash: "#process" },
-                { l: "Contact", h: homeHref("#contact"), hash: "#contact" },
-              ].map((item, i) => (
-                <motion.li
-                  key={item.l}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.04 * i, duration: 0.3 }}
+              <li>
+                <Link
+                  href={homeHref("#why")}
+                  onClick={(e) => {
+                    if (isHome) scrollToHash(e, "#why");
+                    setOpen(false);
+                  }}
+                  className={mobileRow}
                 >
-                  <Link
-                    href={item.h}
-                    onClick={(e) => {
-                      if ("hash" in item && item.hash && isHome) scrollToHash(e, item.hash);
-                      setOpen(false);
-                    }}
-                    className="flex items-center justify-between border-b border-line/10 py-3.5 font-mono text-lg font-medium uppercase tracking-[.1em] text-ink"
-                  >
-                    {item.l}
-                    <ArrowRight className="h-5 w-5 text-subtle" />
-                  </Link>
-                </motion.li>
-              ))}
+                  Why Us
+                  <ArrowRight className="h-5 w-5 text-subtle" />
+                </Link>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setSvcOpen((v) => !v)}
+                  aria-expanded={svcOpen}
+                  aria-controls="mobile-services"
+                  className={cn(mobileRow, "w-full text-left")}
+                >
+                  Services
+                  <ChevronDown className={cn("h-5 w-5 text-subtle transition-transform", svcOpen && "rotate-180")} />
+                </button>
+                {svcOpen && (
+                  <ul id="mobile-services" className="border-b border-line/10 py-2 pl-4">
+                    {SERVICE_LINKS.map((s) => (
+                      <li key={s.href}>
+                        <Link
+                          href={s.href}
+                          onClick={() => setOpen(false)}
+                          className={cn("block py-2.5", pathname === s.href ? "text-brand2" : "text-ink")}
+                        >
+                          <span className="block font-mono text-sm font-medium uppercase tracking-[.1em]">{s.label}</span>
+                          <span className="block text-xs text-subtle">{s.hint}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              <li>
+                <Link href="/work" onClick={() => setOpen(false)} className={mobileRow}>
+                  Work
+                  <ArrowRight className="h-5 w-5 text-subtle" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={homeHref("#process")}
+                  onClick={(e) => {
+                    if (isHome) scrollToHash(e, "#process");
+                    setOpen(false);
+                  }}
+                  className={mobileRow}
+                >
+                  Process
+                  <ArrowRight className="h-5 w-5 text-subtle" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={homeHref("#contact")}
+                  onClick={(e) => {
+                    if (isHome) scrollToHash(e, "#contact");
+                    setOpen(false);
+                  }}
+                  className={mobileRow}
+                >
+                  Contact
+                  <ArrowRight className="h-5 w-5 text-subtle" />
+                </Link>
+              </li>
             </ul>
             <Button
               href={homeHref("#contact")}

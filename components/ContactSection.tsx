@@ -3,8 +3,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { LinkedInIcon, InstagramIcon } from "@/components/BrandIcons";
-import { WA_LINK } from "@/components/WhatsAppFloat";
-import { CONTACT_EMAIL } from "@/lib/siteConfig";
+import { CONTACT_EMAIL, WA_LINK } from "@/lib/siteConfig";
 
 // Each step restates something already published in the process section.
 const NEXT_STEPS = [
@@ -22,7 +21,7 @@ const SOCIALS = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section overflow-x-clip">
       <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
       <div aria-hidden="true" className="absolute left-0 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-brand/15 blur-[130px]" />
       <div className="container">

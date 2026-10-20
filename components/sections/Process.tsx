@@ -32,15 +32,15 @@ export default function Process({
           {PROCESS_STEPS.map((step, i) => (
             <Reveal key={step.num} delay={i * 0.06} className="group relative flex gap-6">
               <div role="listitem" className="contents">
-                <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-brand/30 bg-bg font-mono text-sm font-medium text-brand2 shadow-[0_0_30px_-8px_rgb(var(--brand)/.6)] transition-all duration-300 group-hover:scale-110 group-hover:border-brand group-hover:bg-brand group-hover:text-bg group-hover:shadow-[0_0_36px_-4px_rgb(var(--brand)/.9)]">
+                <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-brand/30 bg-bg font-mono text-sm font-medium text-brand2 shadow-[0_0_30px_-8px_rgb(var(--brand)/.6)] transition-all duration-300 group-hover:scale-110 group-hover:border-brand group-hover:bg-brand group-hover:text-bg group-hover:shadow-[0_0_36px_-4px_rgb(var(--brand)/.9)] group-focus-within:scale-110 group-focus-within:border-brand group-focus-within:bg-brand group-focus-within:text-bg group-focus-within:shadow-[0_0_36px_-4px_rgb(var(--brand)/.9)]">
                   {step.num}
                 </div>
-                <div className="flex-1 rounded-3xl border border-line/10 bg-surface/70 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/50 hover:bg-surface hover:shadow-[0_12px_40px_-16px_rgb(var(--brand)/.5)]">
+                <div tabIndex={0} className="flex-1 rounded-3xl outline-none border border-line/10 bg-surface/70 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/50 hover:bg-surface hover:shadow-[0_12px_40px_-16px_rgb(var(--brand)/.5)] focus:-translate-y-1 focus:border-brand/50 focus:bg-surface focus:shadow-[0_12px_40px_-16px_rgb(var(--brand)/.5)]">
                   <h3 className="text-xl font-semibold tracking-tight">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{step.desc}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {step.chips.map((c) => (
-                      <span key={c} className="rounded-none border border-line/10 bg-line/[.04] px-3 py-1 font-mono text-[11px] text-muted transition-colors duration-300 group-hover:border-brand/40 group-hover:text-brand2">
+                      <span key={c} className="rounded-none border border-line/10 bg-line/[.04] px-3 py-1 font-mono text-[11px] text-muted transition-colors duration-300 group-hover:border-brand/40 group-hover:text-brand2 group-focus-within:border-brand/40 group-focus-within:text-brand2">
                         {c}
                       </span>
                     ))}

@@ -40,8 +40,8 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-line/10 bg-surface/40">
       <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
-      <div className="container grid gap-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
-        <div className={col}>
+      <div className="container grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
+        <div className={`${col} col-span-2 md:col-span-1`}>
           <Image src="/logo.png" alt="Ftechworks" width={211} height={26} className="h-[24px] w-auto dark:brightness-0 dark:invert" />
           <p className="max-w-xs text-sm leading-relaxed text-muted">
             Websites, apps, AI automation, marketing, design and video: engineered end-to-end, founder-led from first
@@ -79,12 +79,12 @@ export default function Footer() {
 
       {/* oversized wordmark */}
       <div aria-hidden="true" className="pointer-events-none select-none overflow-hidden px-4 text-center">
-        <div className="bg-gradient-to-b from-ink/40 via-ink/20 to-ink/[.04] bg-clip-text pb-2 font-display text-[clamp(64px,16vw,220px)] font-bold leading-[.85] tracking-[-0.03em] text-transparent">
+        <div className="bg-gradient-to-b from-ink/40 via-ink/20 to-ink/[.04] bg-clip-text pb-2 font-display text-[clamp(40px,15vw,220px)] font-bold leading-[.85] tracking-[-0.03em] text-transparent">
           FTechworks
         </div>
       </div>
 
-      <div className="container flex flex-wrap items-center justify-between gap-3 border-t border-line/10 py-6 font-mono text-[11px] text-subtle">
+      <div className="container flex flex-wrap items-center justify-between gap-3 border-t border-line/10 pb-20 pt-6 sm:pb-6 font-mono text-[11px] text-subtle">
         <p>© {year} Ftechworks</p>
         <p>Founder replies within 12 hours · Available worldwide</p>
       </div>

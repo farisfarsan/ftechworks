@@ -164,7 +164,7 @@ export default function Showcase() {
           onBlurCapture={() => setPaused(false)}
         >
           {/* tab list */}
-          <div role="tablist" aria-label="Services" aria-orientation="vertical" className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 lg:mx-0 lg:flex-col lg:gap-0 lg:overflow-visible lg:px-0 lg:pb-0">
+          <div role="tablist" aria-label="Services" aria-orientation="vertical" className="-mx-5 flex min-w-0 gap-2 overflow-x-auto px-5 pb-2 lg:mx-0 lg:flex-col lg:gap-0 lg:overflow-visible lg:px-0 lg:pb-0">
             {TABS.map((t, i) => {
               const on = i === active;
               return (
@@ -250,7 +250,7 @@ export default function Showcase() {
           </div>
 
           {/* demo panel */}
-          <div className="relative">
+          <div className="relative min-w-0">
             <div className="brackets">
               <span className="br-b" />
               <div
