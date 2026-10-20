@@ -5,6 +5,7 @@ const ROUTES = [
   "",
   "/work",
   "/web-design-development",
+  "/dashboards",
   "/ai",
   "/uiux-app",
   "/branding",

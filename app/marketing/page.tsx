@@ -1,4 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import MarketingDemo from "@/components/demos/MarketingDemo";
 import { BASE_FAQS } from "@/lib/content";
 import { pageMetadata } from "@/lib/pageMetadata";
 
@@ -66,6 +67,7 @@ export default function MarketingPage() {
         },
         ...BASE_FAQS,
       ]}
+      demo={<MarketingDemo />}
       ctaTitle="Want more traffic and leads?"
       ctaBody="Tell us what you're building. We reply within 12 hours with honest advice and a clear plan."
     />

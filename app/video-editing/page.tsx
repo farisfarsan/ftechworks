@@ -1,4 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import VideoDemo from "@/components/demos/VideoDemo";
 import { BASE_FAQS } from "@/lib/content";
 import { pageMetadata } from "@/lib/pageMetadata";
 
@@ -66,6 +67,7 @@ export default function VideoEditingPage() {
         },
         ...BASE_FAQS,
       ]}
+      demo={<VideoDemo />}
       ctaTitle="Have footage that needs a story?"
       ctaBody="Tell us what you're building. We reply within 12 hours with honest advice and a clear plan."
     />

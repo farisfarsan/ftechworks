@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { CONTACT_EMAIL } from "@/lib/siteConfig";
 
 const SERVICE_LINKS = [
   { href: "/web-design-development", label: "Web Design & Dev" },
+  { href: "/dashboards", label: "Dashboards & Software" },
   { href: "/ai", label: "AI" },
   { href: "/uiux-app", label: "UI/UX & App" },
   { href: "/branding", label: "Branding" },
@@ -28,53 +30,63 @@ const SOCIALS = [
   { href: "https://www.instagram.com/_ftechworks_?igsh=MTg4dHBpMWphbDQ1dg==", label: "Instagram" },
 ];
 
+const col = "flex flex-col items-start gap-3";
+const head = "mb-1 font-mono text-[11px] uppercase tracking-[.08em] text-subtle";
+const lnk = "text-sm text-muted transition-colors hover:text-ink";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer>
-      <div className="footer-in">
-        <div className="footer-col footer-brand">
-          <Image src="/logo.png" alt="Ftechworks" width={211} height={26} className="logo-img" />
-          <p>
-            Websites, apps, AI automation, marketing, design and video: engineered end-to-end,
-            founder-led from first call to launch.
+    <footer className="relative overflow-hidden border-t border-line/10 bg-surface/40">
+      <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
+      <div className="container grid gap-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
+        <div className={col}>
+          <Image src="/logo.png" alt="Ftechworks" width={211} height={26} className="h-[24px] w-auto dark:brightness-0 dark:invert" />
+          <p className="max-w-xs text-sm leading-relaxed text-muted">
+            Websites, apps, AI automation, marketing, design and video: engineered end-to-end, founder-led from first
+            call to launch.
           </p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="footer-mail">
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm font-medium text-ink hover:text-brand2">
             {CONTACT_EMAIL}
           </a>
-          <div className="footer-status">
-            <span className="pulse"></span>
-            Available for new projects · Founder replies within 12 hours
-          </div>
-          <div className="footer-socials">
-            {SOCIALS.map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noopener" aria-label={s.label}>
-                {s.label}
-              </a>
-            ))}
-          </div>
         </div>
-        <div className="footer-col">
-          <div className="footer-h">Services</div>
+        <div className={col}>
+          <div className={head}>Services</div>
           {SERVICE_LINKS.map((s) => (
-            <Link key={s.href} href={s.href}>
+            <Link key={s.href} href={s.href} className={lnk}>
               {s.label}
             </Link>
           ))}
         </div>
-        <div className="footer-col">
-          <div className="footer-h">Company</div>
+        <div className={col}>
+          <div className={head}>Company</div>
           {COMPANY_LINKS.map((c) => (
-            <a key={c.href} href={c.href}>
+            <a key={c.href} href={c.href} className={lnk}>
               {c.label}
             </a>
           ))}
         </div>
+        <div className={col}>
+          <div className={head}>Connect</div>
+          {SOCIALS.map((s) => (
+            <a key={s.label} href={s.href} target="_blank" rel="noopener" className={`${lnk} inline-flex items-center gap-1`}>
+              {s.label} <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+          ))}
+        </div>
       </div>
-      <div className="footer-bottom">
+
+      {/* oversized wordmark */}
+      <div aria-hidden="true" className="pointer-events-none select-none overflow-hidden px-4 text-center">
+        <div className="bg-gradient-to-b from-ink/40 via-ink/20 to-ink/[.04] bg-clip-text pb-2 font-display text-[clamp(64px,16vw,220px)] font-bold leading-[.85] tracking-[-0.03em] text-transparent">
+          FTechworks
+        </div>
+      </div>
+
+      <div className="container flex flex-wrap items-center justify-between gap-3 border-t border-line/10 py-6 font-mono text-[11px] text-subtle">
         <p>© {year} Ftechworks</p>
-        <p>Available Worldwide</p>
+        <p>Founder replies within 12 hours · Available worldwide</p>
       </div>
     </footer>
   );

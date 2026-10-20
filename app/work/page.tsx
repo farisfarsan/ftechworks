@@ -1,14 +1,12 @@
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
-import WorkFilters from "@/components/WorkFilters";
-import AutoScrollGallery from "@/components/AutoScrollGallery";
-import TiltCard from "@/components/TiltCard";
-import RippleLink from "@/components/RippleLink";
+import { ArrowLeft } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
+import { AuroraGlow, GridBackground } from "@/components/ui/backgrounds";
+import WorkGallery from "@/components/WorkGallery";
+import CtaBand from "@/components/sections/CtaBand";
 import JsonLdScript from "@/components/JsonLdScript";
 import { SITE_URL } from "@/lib/siteConfig";
 import { pageMetadata } from "@/lib/pageMetadata";
-
-const TILT = { x: 10, y: -8 };
 
 export const metadata = pageMetadata(
   "Work",
@@ -29,282 +27,39 @@ export default function WorkPage() {
         }}
       />
 
-      {/* PAGE HEADER */}
-      <section className="sec sec-page-header">
-        <div className="sec-in">
+      <section className="relative isolate overflow-hidden pb-14 pt-36 md:pb-20 md:pt-44">
+        <AuroraGlow className="opacity-70" />
+        <GridBackground />
+        <div className="container">
           <Reveal>
-            <Link href="/" className="back-lnk">
-              ← Back to Home
+            <Link href="/" className="mb-8 flex w-fit items-center gap-2 text-sm text-subtle transition hover:text-ink">
+              <ArrowLeft className="h-4 w-4" /> Back to home
             </Link>
-            <div className="ey">Portfolio</div>
-            <h1 className="sh">Built with care.</h1>
-            <p className="ssub" style={{ marginBottom: 0 }}>
-              Real systems, built to solve real problems, from solo founders to enterprise
-              clients worldwide.
+            <div className="eyebrow mb-5">
+              <span className="h-px w-6 bg-brand2/60" /> Portfolio
+            </div>
+            <h1 className="h-display text-[clamp(2.6rem,6vw,5rem)]">
+              Built with <span className="serif-accent grad-text pr-1 text-[1.08em]">care.</span>
+            </h1>
+            <p className="lede mt-6 max-w-xl">
+              Real systems, built to solve real problems, from solo founders to enterprise clients worldwide.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* WORK */}
-      <section className="sec sec-alt">
-        <div className="sec-in">
+      <section className="relative pb-24 md:pb-32">
+        <div className="container">
           <h2 className="sr-only">Selected Work</h2>
-          <WorkFilters>
-            <Reveal className="works-grid" delay="d1">
-              <TiltCard
-                href="https://www.grytt.club/"
-                target="_blank"
-                rel="noopener"
-                intensity={TILT}
-                className="wcard"
-                data-cat="app"
-              >
-                <div
-                  className="wcard-thumb"
-                  style={{ background: "#0f0500", display: "flex", alignItems: "center", justifyContent: "center" }}
-                >
-                  <img
-                    src="/app/grytt.png"
-                    alt="Grytt app icon"
-                    width={130}
-                    height={96}
-                    style={{ width: "42%", maxWidth: 150, objectFit: "contain", borderRadius: 18 }}
-                  />
-                  <div
-                    className="wcard-overlay"
-                    style={{ background: "linear-gradient(180deg,transparent 50%,rgba(6,6,10,.85) 100%)" }}
-                  ></div>
-                  <div className="wcard-num">01</div>
-                  <div className="wcard-live">Live ↗</div>
-                </div>
-                <div className="wcard-body">
-                  <div className="wcard-tag">Mobile App · Landing Page</div>
-                  <h3>Grytt: Fitness OS</h3>
-                  <p>
-                    High-converting landing page for a fitness accountability app, with app store
-                    CTAs, animated UI showcase and waitlist integration.
-                  </p>
-                  <div className="wcard-pills">
-                    <span className="wcard-pill">React</span>
-                    <span className="wcard-pill">Animation</span>
-                    <span className="wcard-pill">Conversion</span>
-                  </div>
-                  <div className="wcard-foot">
-                    <span className="wcard-link">grytt.club</span>
-                    <span className="wcard-arr">↗</span>
-                  </div>
-                </div>
-              </TiltCard>
-
-              <TiltCard intensity={TILT} className="wcard" data-cat="app">
-                <div
-                  className="wcard-thumb"
-                  style={{ background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}
-                >
-                  <img
-                    src="/app/flat.png"
-                    alt="Flatkare logo"
-                    width={281}
-                    height={78}
-                    loading="lazy"
-                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                  />
-                  <div
-                    className="wcard-overlay"
-                    style={{ background: "linear-gradient(180deg,transparent 60%,rgba(255,255,255,.85) 100%)" }}
-                  ></div>
-                  <div className="wcard-num">02</div>
-                </div>
-                <div className="wcard-body">
-                  <div className="wcard-tag">Mobile &amp; Web App · PropTech</div>
-                  <h3>Flatkare</h3>
-                  <p>
-                    Modern apartment management app connecting residents and property managers,
-                    rent &amp; utility tracking, maintenance requests, community announcements and
-                    secure document sharing in one place.
-                  </p>
-                  <div className="wcard-pills">
-                    <span className="wcard-pill">React Native</span>
-                    <span className="wcard-pill">FastAPI</span>
-                    <span className="wcard-pill">Push Notifications</span>
-                    <span className="wcard-pill">Payments</span>
-                  </div>
-                </div>
-              </TiltCard>
-
-              <TiltCard
-                href="https://compassmbspc.com/"
-                target="_blank"
-                rel="noopener"
-                intensity={TILT}
-                className="wcard"
-                data-cat="website"
-              >
-                <div
-                  className="wcard-thumb"
-                  style={{ background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}
-                >
-                  <img
-                    src="/website/compass.png"
-                    alt="Compass Modern Business SPC logo"
-                    width={281}
-                    height={125}
-                    loading="lazy"
-                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                  />
-                  <div
-                    className="wcard-overlay"
-                    style={{ background: "linear-gradient(180deg,transparent 60%,rgba(255,255,255,.85) 100%)" }}
-                  ></div>
-                  <div className="wcard-num">01</div>
-                  <div className="wcard-live">Live ↗</div>
-                </div>
-                <div className="wcard-body">
-                  <div className="wcard-tag">Business Website · Design &amp; Build</div>
-                  <h3>Compass Modern Business SPC</h3>
-                  <p>
-                    Full business website for an Oman-based consultancy: responsive design,
-                    multi-section layout, SEO-optimised and live in production.
-                  </p>
-                  <div className="wcard-pills">
-                    <span className="wcard-pill">HTML/CSS</span>
-                    <span className="wcard-pill">Performance</span>
-                    <span className="wcard-pill">Responsive</span>
-                  </div>
-                  <div className="wcard-foot">
-                    <span className="wcard-link">compassmbspc.com</span>
-                    <span className="wcard-arr">↗</span>
-                  </div>
-                </div>
-              </TiltCard>
-
-              <TiltCard intensity={TILT} className="wcard" data-cat="ai">
-                <div className="wcard-thumb">
-                  <img src="/chatboat.png" alt="AI Bot" width={675} height={453} loading="lazy" />
-                  <div className="wcard-overlay"></div>
-                  <div className="wcard-num">01</div>
-                </div>
-                <div className="wcard-body">
-                  <div className="wcard-tag">AI · Chatbot Integration</div>
-                  <h3>AI Customer Support Bot</h3>
-                  <p>
-                    GPT-powered support chatbot with custom knowledge base, lead qualification,
-                    CRM integration and multi-channel deployment.
-                  </p>
-                  <div className="wcard-pills">
-                    <span className="wcard-pill">OpenAI</span>
-                    <span className="wcard-pill">LangChain</span>
-                    <span className="wcard-pill">RAG</span>
-                    <span className="wcard-pill">Webhooks</span>
-                  </div>
-                </div>
-              </TiltCard>
-
-              <TiltCard intensity={TILT} className="wcard" data-cat="dashboard">
-                <div className="wcard-thumb">
-                  <img src="/dashboard.png" alt="Work Dashboard app screenshot" width={400} height={300} loading="lazy" />
-                  <div className="wcard-overlay"></div>
-                  <div className="wcard-num">03</div>
-                </div>
-                <div className="wcard-body">
-                  <div className="wcard-tag">Web App · Dashboard</div>
-                  <h3>Work Dashboard</h3>
-                  <p>
-                    Project management dashboard for tracking tasks, deadlines and team workload,
-                    live progress tracking, analytics and reminders in one clean interface.
-                  </p>
-                  <div className="wcard-pills">
-                    <span className="wcard-pill">React</span>
-                    <span className="wcard-pill">Dashboard</span>
-                    <span className="wcard-pill">Analytics</span>
-                  </div>
-                </div>
-              </TiltCard>
-            </Reveal>
-
-            <Reveal className="brand-case" delay="d2" data-cat="landing" style={{ marginTop: 14 }}>
-              <AutoScrollGallery className="landing-gallery">
-                <img src="/landingpage/lp2.avif" alt="Landing page hero design" width={384} height={384} loading="lazy" />
-                <img src="/landingpage/landing.avif" alt="Landing page feature section design" width={384} height={256} loading="lazy" />
-                <img src="/landingpage/landing1.avif" alt="Landing page section design" width={384} height={250} loading="lazy" />
-              </AutoScrollGallery>
-              <div className="brand-info">
-                <div className="wcard-tag">Mobile App · Landing Page</div>
-                <h3>Landing Page Design</h3>
-                <p>
-                  High-converting app landing page design work, built to turn visitors into
-                  customers. Clean hero sections, scannable feature layouts and a clear path to the
-                  call-to-action, all designed to load fast and look sharp on any device.
-                </p>
-                <ul className="brand-points">
-                  <li>Bold hero section with clear value proposition</li>
-                  <li>Feature &amp; benefit sections built for scannability</li>
-                  <li>Fully responsive across desktop, tablet and mobile</li>
-                  <li>Conversion-focused layout with strong CTA placement</li>
-                </ul>
-                <div className="wcard-pills">
-                  <span className="wcard-pill">Mobile App</span>
-                  <span className="wcard-pill">Landing Page</span>
-                  <span className="wcard-pill">UI Design</span>
-                  <span className="wcard-pill">Figma</span>
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal className="brand-case" delay="d3" data-cat="branding" style={{ marginTop: 14 }}>
-              <AutoScrollGallery className="brand-gallery">
-                <img src="/branding/branding.jpg" alt="Samak Restaurant branded paper cups" width={482} height={700} loading="lazy" />
-                <img src="/branding/brandin2.jpg" alt="Samak Restaurant branded staff apron" width={569} height={700} loading="lazy" />
-                <img src="/branding/branding3.jpg" alt="Samak Restaurant branded takeaway containers" width={700} height={418} loading="lazy" />
-                <img src="/branding/brandin4.jpg" alt="Samak Restaurant illuminated shopfront sign" width={700} height={400} loading="lazy" />
-              </AutoScrollGallery>
-              <div className="brand-info">
-                <div className="wcard-tag">Branding &amp; Logo Design · F&amp;B</div>
-                <h3>Samak Restaurant</h3>
-                <p>
-                  Full brand identity for a seafood restaurant, designed to work everywhere the
-                  business shows up, not just on a screen. We built the fish-integrated wordmark,
-                  a recurring scale pattern and a colour system, then carried it across real
-                  packaging and signage.
-                </p>
-                <ul className="brand-points">
-                  <li>Logo design: fish-integrated wordmark, multiple concepts</li>
-                  <li>Colour palette &amp; recurring pattern system</li>
-                  <li>Packaging application: cups &amp; takeaway containers</li>
-                  <li>Staff apron &amp; uniform branding</li>
-                  <li>Illuminated shopfront signage design</li>
-                </ul>
-                <div className="wcard-pills">
-                  <span className="wcard-pill">Logo Design</span>
-                  <span className="wcard-pill">Brand Identity</span>
-                  <span className="wcard-pill">Packaging</span>
-                  <span className="wcard-pill">Signage</span>
-                  <span className="wcard-pill">Figma</span>
-                </div>
-              </div>
-            </Reveal>
-          </WorkFilters>
+          <WorkGallery />
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="sec">
-        <div className="sec-in">
-          <Reveal className="cta-band">
-            <h3>Like what you see?</h3>
-            <p>Tell us what you&apos;re building. We reply within 12 hours with honest advice and a clear plan.</p>
-            <div className="cta-band-btns">
-              <RippleLink href="/#contact" className="btn-lq">
-                Start a Project →
-              </RippleLink>
-              <Link href="/" className="link-arrow">
-                See all Services <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <CtaBand
+        title="Like what you see?"
+        body="Tell us what you're building. We reply within 12 hours with honest advice and a clear plan."
+        secondary={{ href: "/#services", label: "See all services" }}
+      />
     </>
   );
 }

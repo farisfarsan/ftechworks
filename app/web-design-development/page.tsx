@@ -1,4 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import WebsiteDemo from "@/components/demos/WebsiteDemo";
 import { BASE_FAQS } from "@/lib/content";
 import { pageMetadata } from "@/lib/pageMetadata";
 
@@ -57,6 +58,7 @@ export default function WebDesignDevelopmentPage() {
         },
         ...BASE_FAQS,
       ]}
+      demo={<WebsiteDemo />}
       ctaTitle="Have a web project in mind?"
       ctaBody="Tell us what you're building. We reply within 12 hours with honest advice and a clear plan."
     />

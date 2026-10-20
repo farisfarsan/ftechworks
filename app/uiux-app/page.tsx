@@ -1,4 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import MobileAppDemo from "@/components/demos/MobileAppDemo";
 import { BASE_FAQS } from "@/lib/content";
 import { pageMetadata } from "@/lib/pageMetadata";
 
@@ -62,6 +63,7 @@ export default function UiuxAppPage() {
         },
         ...BASE_FAQS,
       ]}
+      demo={<MobileAppDemo />}
       ctaTitle="Got an app idea?"
       ctaBody="Tell us what you're building. We reply within 12 hours with honest advice and a clear plan."
     />

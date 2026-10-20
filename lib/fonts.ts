@@ -1,25 +1,16 @@
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 
-// Self-hosted via next/font: no external fonts.googleapis.com request, no
-// render-blocking <link>, fonts are fetched from the same origin and can be
-// preloaded. display: "swap" avoids invisible text while loading.
-export const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
+// Self-hosted via next/font: no external request, no render-blocking <link>.
+// Inter for body copy and UI labels; Plus Jakarta Sans for headings and numerals.
 export const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "swap",
 });
 
-export const jetbrainsMono = JetBrains_Mono({
+export const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-jetbrains-mono",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
   display: "swap",
 });
