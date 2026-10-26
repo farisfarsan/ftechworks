@@ -47,6 +47,17 @@ const CARDS = [
     pills: ["OpenAI", "LangChain", "RAG"],
     pos: "object-center",
   },
+  {
+    no: "05",
+    img: "/website/morison-muscat.png",
+    alt: "Morison Muscat logo",
+    tag: "Website",
+    title: "Business websites",
+    desc: "Corporate websites for professional firms: clear structure, responsive design and SEO-ready from day one.",
+    pills: ["Corporate", "SEO", "Responsive"],
+    pos: "object-contain p-3",
+    logo: true,
+  },
 ];
 
 const Pills = ({ items }: { items: string[] }) => (
@@ -130,7 +141,7 @@ export default function WorkPreview() {
         </Reveal>
 
         {/* project cards */}
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
+        <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {CARDS.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.08}>
               <Link
@@ -138,13 +149,13 @@ export default function WorkPreview() {
                 aria-label={`${c.title} — view our work`}
                 className="group flex h-full flex-col overflow-hidden border border-line/15 bg-surface/70 transition-all duration-300 hover:-translate-y-1 hover:border-brand"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-surface2">
+                <div className={`relative aspect-[4/3] overflow-hidden ${c.logo ? "bg-white" : "bg-surface2"}`}>
                   <Image
                     src={c.img}
                     alt={c.alt}
                     fill
-                    sizes="(min-width:768px) 380px, 100vw"
-                    className={`object-cover transition-transform duration-700 group-hover:scale-105 ${c.pos}`}
+                    sizes="(min-width:1024px) 290px, (min-width:768px) 380px, 100vw"
+                    className={`transition-transform duration-700 group-hover:scale-105 ${c.logo ? "" : "object-cover"} ${c.pos}`}
                   />
                   <span className="absolute left-3 top-3 bg-bg/80 px-2 py-1 text-[11px] font-semibold tracking-[.1em] text-brand2 backdrop-blur">{c.no}</span>
                 </div>
