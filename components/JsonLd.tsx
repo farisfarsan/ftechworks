@@ -15,8 +15,8 @@ export default function JsonLd() {
         name: SITE_NAME,
         description: SITE_DESCRIPTION,
         url: SITE_URL,
-        logo: `${SITE_URL}/logo.png`,
-        image: `${SITE_URL}/logo.png`,
+        logo: `${SITE_URL}/logo-mark-dark.png`,
+        image: `${SITE_URL}/logo-mark-dark.png`,
         email: CONTACT_EMAIL,
         telephone: "+919061894005",
         address: {

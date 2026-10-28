@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
       <div className="container grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
         <div className={`${col} col-span-2 md:col-span-1`}>
-          <Image src="/logo.png" alt="Ftechworks" width={211} height={26} className="h-[24px] w-auto dark:brightness-0 dark:invert" />
+          <Image src="/logo-mark.png" alt="Ftechworks" width={1104} height={572} className="h-[30px] w-auto [[data-theme=light]_&]:brightness-0" />
           <p className="max-w-xs text-sm leading-relaxed text-muted">
             Websites, apps, AI automation, marketing, design and video: engineered end-to-end, founder-led from first
             call to launch.

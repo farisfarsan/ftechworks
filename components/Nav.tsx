@@ -116,12 +116,12 @@ export default function Nav() {
         >
           <Link href="/" aria-label="Ftechworks home" className="shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo-mark.png"
               alt="Ftechworks"
-              width={211}
-              height={26}
+              width={1104}
+              height={572}
               priority
-              className="h-[22px] w-auto dark:brightness-0 dark:invert"
+              className="h-[26px] w-auto [[data-theme=light]_&]:brightness-0"
             />
           </Link>
 
@@ -209,7 +209,7 @@ export default function Nav() {
             className="fixed inset-0 z-[70] overflow-y-auto bg-bg/95 px-6 pb-10 pt-5 backdrop-blur-2xl lg:hidden"
           >
             <div className="flex items-center justify-between">
-              <Image src="/logo.png" alt="Ftechworks" width={211} height={26} className="h-[22px] w-auto dark:brightness-0 dark:invert" />
+              <Image src="/logo-mark.png" alt="Ftechworks" width={1104} height={572} className="h-[26px] w-auto [[data-theme=light]_&]:brightness-0" />
               <button
                 type="button"
                 className="grid h-10 w-10 place-items-center border border-line/20 text-ink"
