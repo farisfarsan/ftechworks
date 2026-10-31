@@ -13,6 +13,8 @@ export default function JsonLd() {
         "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
         "@id": orgId,
         name: SITE_NAME,
+        // Spellings people search for, so Google stops correcting "ftechworks" to "freshworks".
+        alternateName: ["FTechworks", "Ftech Works", "F Tech Works", "FTW"],
         description: SITE_DESCRIPTION,
         url: SITE_URL,
         logo: `${SITE_URL}/logo-mark-dark.png`,

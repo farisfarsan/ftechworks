@@ -1,7 +1,8 @@
 import { Logo } from "@/components/Logo";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { CONTACT_EMAIL } from "@/lib/siteConfig";
+import { Mail } from "lucide-react";
+import { WhatsAppIcon } from "@/components/BrandIcons";
+import { CONTACT_EMAIL, CONTACT_PHONES, waLink } from "@/lib/siteConfig";
 
 const SERVICE_LINKS = [
   { href: "/web-design-development", label: "Web Design & Dev" },
@@ -21,19 +22,13 @@ const COMPANY_LINKS = [
   { href: "/#contact", label: "Contact" },
 ];
 
-const SOCIALS = [
-  { href: `mailto:${CONTACT_EMAIL}`, label: "Email" },
-  {
-    href: "https://wa.me/919061894005?text=Hi%20Team%20Ftechworks%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project.",
-    label: "WhatsApp",
-  },
-  { href: "https://www.linkedin.com/company/135145399/", label: "LinkedIn" },
-  { href: "https://www.instagram.com/_ftechworks_?igsh=MTg4dHBpMWphbDQ1dg==", label: "Instagram" },
-];
-
 const col = "flex flex-col items-start gap-3";
 const head = "mb-1 font-mono text-[11px] uppercase tracking-[.08em] text-subtle";
 const lnk = "text-sm text-muted transition-colors hover:text-ink";
+// contact rows: country label, number/address, then a small icon button
+const tag = "w-12 shrink-0 font-mono text-[11px] uppercase tracking-[.08em] text-subtle";
+const iconBtn =
+  "grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line/20 text-muted transition-colors hover:border-brand hover:text-brand2";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -41,16 +36,13 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-line/10 bg-surface/40">
       <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
-      <div className="container grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
+      <div className="container grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-[1.3fr_1fr_1fr_1.6fr]">
         <div className={`${col} col-span-2 md:col-span-1`}>
           <Logo className="h-[30px]" />
           <p className="max-w-xs text-sm leading-relaxed text-muted">
             Websites, apps, AI automation, marketing, design and video: engineered end-to-end, founder-led from first
             call to launch.
           </p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm font-medium text-ink hover:text-brand2">
-            {CONTACT_EMAIL}
-          </a>
         </div>
         <div className={col}>
           <div className={head}>Services</div>
@@ -68,13 +60,35 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <div className={col}>
-          <div className={head}>Connect</div>
-          {SOCIALS.map((s) => (
-            <a key={s.label} href={s.href} target="_blank" rel="noopener" className={`${lnk} inline-flex items-center gap-1`}>
-              {s.label} <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
+        <div className={`${col} col-span-2 md:col-span-1`}>
+          <div className={head}>Contact</div>
+          {CONTACT_PHONES.map((p) => (
+            <div key={p.wa} className="flex items-center gap-2">
+              <span className={tag}>{p.country}</span>
+              <a href={`tel:+${p.wa}`} className={`${lnk} whitespace-nowrap`}>
+                {p.display}
+              </a>
+              <a
+                href={waLink(p.wa)}
+                target="_blank"
+                rel="noopener"
+                aria-label={`WhatsApp ${p.display}`}
+                className={iconBtn}
+              >
+                <WhatsAppIcon className="h-3.5 w-3.5" />
+              </a>
+            </div>
           ))}
+          <div className="flex items-center gap-2">
+            <span className={tag}>Email</span>
+            <a href={`mailto:${CONTACT_EMAIL}`} className={lnk}>
+              {CONTACT_EMAIL}
+            </a>
+            <a href={`mailto:${CONTACT_EMAIL}`} aria-label={`Email ${CONTACT_EMAIL}`} className={iconBtn}>
+              <Mail className="h-3.5 w-3.5" />
+            </a>
+          </div>
+          <p className="text-xs text-subtle">WhatsApp available on all numbers</p>
         </div>
       </div>
 
