@@ -34,7 +34,7 @@ export default function Why() {
     <section id="why" className="section">
       <div className="container">
         <SectionHead
-          no="01"
+          no="02"
           eyebrow="Why Ftechworks"
           title={
             <>

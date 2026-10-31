@@ -6,7 +6,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { HOMEPAGE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/siteConfig";
-import { inter, jakarta } from "@/lib/fonts";
+import { audiowide, inter, jakarta } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       data-theme="dark"
-      className={`${inter.variable} ${jakarta.variable}`}
+      className={`${inter.variable} ${jakarta.variable} ${audiowide.variable}`}
     >
       <head>
         <ThemeScript />

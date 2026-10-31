@@ -23,3 +23,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private working files (company profile has founder photos/details)
+/company-profile/
+*.pdf
+/new_logo.jpeg
+/WhatsApp Image *.jpeg

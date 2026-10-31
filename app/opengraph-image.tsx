@@ -26,7 +26,7 @@ export default function OgImage() {
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={mark} width={276} height={143} alt="" />
+        <img src={mark} width={416} height={96} alt="" />
         <div
           style={{
             fontSize: 84,

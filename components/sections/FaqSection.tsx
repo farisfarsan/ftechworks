@@ -12,7 +12,7 @@ export default function FaqSection() {
       <div className="container grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionHead
-            no="05"
+            no="06"
             eyebrow="FAQ"
             className="mb-8"
             title={

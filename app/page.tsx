@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import TechMarquee from "@/components/sections/TechMarquee";
 import Stats from "@/components/sections/Stats";
+import Founders from "@/components/sections/Founders";
 import Why from "@/components/sections/Why";
 import Showcase from "@/components/sections/Showcase";
 import FaqSection from "@/components/sections/FaqSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <TechMarquee />
       <Stats />
+      <Founders />
       <Why />
       <Showcase />
       <WorkPreview />

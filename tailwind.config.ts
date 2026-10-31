@@ -24,6 +24,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         display: ["var(--font-display)", "var(--font-sans)", "system-ui", "sans-serif"],
+        brand: ["var(--font-brand)", "var(--font-sans)", "system-ui", "sans-serif"],
         // Labels share the sans face: one font site-wide (the `font-mono` class is kept
         // as a hook for small uppercase labels, but resolves to Inter).
         mono: ["var(--font-sans)", "system-ui", "sans-serif"],

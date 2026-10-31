@@ -6,7 +6,7 @@ export const HOMEPAGE_TITLE = "Ftechworks | Custom Web, App & AI Development";
 export const SITE_DESCRIPTION =
   "Ftechworks builds full-stack web apps, mobile apps and AI-powered products: clean architecture, tested code, delivered on time.";
 export const SITE_URL = "https://ftechworks.in";
-export const CONTACT_EMAIL = "ftechworks8@gmail.com";
+export const CONTACT_EMAIL = "hello@ftechworks.in";
 // Prefilled WhatsApp chat link, shared by the floating button, contact section and footer.
 export const WA_LINK =
   "https://wa.me/919061894005?text=Hi%20Team%20Ftechworks%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project.";

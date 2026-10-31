@@ -17,7 +17,7 @@ export default function Process({
           <SectionHead
             className="mb-0"
             eyebrow="How we work"
-          no="04"
+          no="05"
             title={
               <>
                 Your roadmap to <span className="serif-accent grad-text pr-1 text-[1.1em]">shipping.</span>

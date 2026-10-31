@@ -146,7 +146,7 @@ export default function Showcase() {
       <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
       <div className="container">
         <SectionHead
-          no="02"
+          no="03"
           eyebrow="What we build"
           title={
             <>

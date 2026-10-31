@@ -3,6 +3,7 @@ import { SITE_URL } from "@/lib/siteConfig";
 
 const ROUTES = [
   "",
+  "/about",
   "/work",
   "/web-design-development",
   "/dashboards",

@@ -1,11 +1,11 @@
-// Single source for the homepage stat band. Every value is a real, already
-// published fact — years in production and services offered are counted from
-// the site; the reply-time figure matches the commitment stated in the
-// process/FAQ copy.
+// Single source for the homepage stat band. Same four figures as the company
+// profile PDF: combined founder experience (15+ and 3+ years), the reply-time
+// commitment, the seven service pages and the support period in the process copy.
 export type StatItem = { count: number; suffix?: string; label: string };
 
 export const STATS: StatItem[] = [
-  { count: 3, suffix: "+", label: "Years in production" },
+  { count: 18, suffix: "+", label: "Years of combined engineering" },
   { count: 12, suffix: "hr", label: "Founder reply time" },
-  { count: 14, label: "Services offered" },
+  { count: 7, label: "Service lines" },
+  { count: 2, suffix: "wk", label: "Free post-launch support" },
 ];

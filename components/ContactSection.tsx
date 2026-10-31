@@ -2,7 +2,6 @@ import { ArrowUpRight, Check, Clock, Mail, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { BorderBeam } from "@/components/ui/border-beam";
-import { LinkedInIcon, InstagramIcon } from "@/components/BrandIcons";
 import { CONTACT_EMAIL, WA_LINK } from "@/lib/siteConfig";
 
 // Each step restates something already published in the process section.
@@ -14,11 +13,6 @@ const NEXT_STEPS = [
 
 const PERKS = ["Fixed scope & price, no hidden fees", "2-week post-launch support included", "Available to clients worldwide"];
 
-const SOCIALS = [
-  { href: "https://www.linkedin.com/company/135145399/", label: "LinkedIn", Icon: LinkedInIcon },
-  { href: "https://www.instagram.com/_ftechworks_?igsh=MTg4dHBpMWphbDQ1dg==", label: "Instagram", Icon: InstagramIcon },
-];
-
 export default function ContactSection() {
   return (
     <section id="contact" className="section overflow-x-clip">
@@ -28,7 +22,7 @@ export default function ContactSection() {
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <Reveal>
             <div className="eyebrow mb-5">
-              <span className="text-brand">[06]</span> Get in touch
+              <span className="text-brand">[07]</span> Get in touch
             </div>
             <h2 className="h-section">
               Let&apos;s build something <span className="serif-accent">remarkable.</span>
@@ -81,21 +75,6 @@ export default function ContactSection() {
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
 
-                <div className="mt-5 flex items-center gap-3">
-                  <span className="text-xs font-semibold uppercase tracking-[.1em] text-subtle">Follow</span>
-                  {SOCIALS.map(({ href, label, Icon }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target="_blank"
-                      rel="noopener"
-                      aria-label={label}
-                      className="grid h-10 w-10 place-items-center border border-line/20 text-muted transition-colors hover:border-brand hover:text-brand2"
-                    >
-                      <Icon className="h-[18px] w-[18px]" />
-                    </a>
-                  ))}
-                </div>
                 <BorderBeam size={220} duration={14} />
               </div>
             </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { Logo } from "@/components/Logo";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
@@ -115,17 +115,15 @@ export default function Nav() {
           )}
         >
           <Link href="/" aria-label="Ftechworks home" className="shrink-0">
-            <Image
-              src="/logo-mark.png"
-              alt="Ftechworks"
-              width={1104}
-              height={572}
-              priority
-              className="h-[26px] w-auto [[data-theme=light]_&]:brightness-0"
-            />
+            <Logo priority className="h-[26px]" />
           </Link>
 
           <ul className="hidden items-center gap-0.5 lg:flex">
+            <li>
+              <Link href="/about" className={linkCls(pathname === "/about")}>
+                About
+              </Link>
+            </li>
             <li>
               <a href={homeHref("#why")} onClick={onHash("#why")} className={linkCls(isHome && active === "why")}>
                 Why Us
@@ -209,7 +207,7 @@ export default function Nav() {
             className="fixed inset-0 z-[70] overflow-y-auto bg-bg/95 px-6 pb-10 pt-5 backdrop-blur-2xl lg:hidden"
           >
             <div className="flex items-center justify-between">
-              <Image src="/logo-mark.png" alt="Ftechworks" width={1104} height={572} className="h-[26px] w-auto [[data-theme=light]_&]:brightness-0" />
+              <Logo className="h-[26px]" />
               <button
                 type="button"
                 className="grid h-10 w-10 place-items-center border border-line/20 text-ink"
@@ -220,6 +218,12 @@ export default function Nav() {
               </button>
             </div>
             <ul className="mt-10 space-y-1">
+              <li>
+                <Link href="/about" onClick={() => setOpen(false)} className={mobileRow}>
+                  About
+                  <ArrowRight className="h-5 w-5 text-subtle" />
+                </Link>
+              </li>
               <li>
                 <Link
                   href={homeHref("#why")}

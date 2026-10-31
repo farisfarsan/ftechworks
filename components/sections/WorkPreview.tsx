@@ -78,7 +78,7 @@ export default function WorkPreview() {
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6 md:mb-16 md:flex-nowrap">
           <SectionHead
             className="mb-0 max-w-xl flex-1 md:mb-0"
-            no="03"
+            no="04"
             eyebrow="Selected work"
             title={
               <>

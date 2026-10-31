@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Logo } from "@/components/Logo";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { CONTACT_EMAIL } from "@/lib/siteConfig";
@@ -14,6 +14,7 @@ const SERVICE_LINKS = [
 ];
 
 const COMPANY_LINKS = [
+  { href: "/about", label: "About" },
   { href: "/#why", label: "Why Us" },
   { href: "/work", label: "Work" },
   { href: "/#process", label: "Process" },
@@ -42,7 +43,7 @@ export default function Footer() {
       <div className="hairline absolute inset-x-0 top-0" aria-hidden="true" />
       <div className="container grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
         <div className={`${col} col-span-2 md:col-span-1`}>
-          <Image src="/logo-mark.png" alt="Ftechworks" width={1104} height={572} className="h-[30px] w-auto [[data-theme=light]_&]:brightness-0" />
+          <Logo className="h-[30px]" />
           <p className="max-w-xs text-sm leading-relaxed text-muted">
             Websites, apps, AI automation, marketing, design and video: engineered end-to-end, founder-led from first
             call to launch.
@@ -79,13 +80,13 @@ export default function Footer() {
 
       {/* oversized wordmark */}
       <div aria-hidden="true" className="pointer-events-none select-none overflow-hidden px-4 text-center">
-        <div className="bg-gradient-to-b from-ink/40 via-ink/20 to-ink/[.04] bg-clip-text pb-2 font-display text-[clamp(40px,15vw,220px)] font-bold leading-[.85] tracking-[-0.03em] text-transparent">
-          FTechworks
+        <div className="bg-gradient-to-b from-ink/40 via-ink/20 to-ink/[.04] bg-clip-text py-[.06em] font-brand text-[clamp(28px,10.4vw,150px)] leading-none tracking-[-0.01em] text-transparent">
+          FTECHWORKS
         </div>
       </div>
 
       <div className="container flex flex-wrap items-center justify-between gap-3 border-t border-line/10 pb-20 pt-6 sm:pb-6 font-mono text-[11px] text-subtle">
-        <p>© {year} Ftechworks</p>
+        <p>© {year} <span className="font-brand tracking-[.04em]">FTECHWORKS</span></p>
         <p>Founder replies within 12 hours · Available worldwide</p>
       </div>
     </footer>

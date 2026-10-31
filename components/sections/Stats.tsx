@@ -7,11 +7,11 @@ export default function Stats() {
   return (
     <section className="relative py-16 md:py-20">
       <div className="container">
-        <Reveal className="grid overflow-hidden border border-line/15 bg-surface/60 backdrop-blur sm:grid-cols-3">
+        <Reveal className="grid gap-px overflow-hidden border border-line/15 bg-line/15 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((s) => (
             <div
               key={s.label}
-              className="group relative cursor-default overflow-hidden px-8 py-10 text-center transition-colors duration-300 hover:bg-brand sm:text-left [&:not(:first-child)]:border-t [&:not(:first-child)]:border-line/15 sm:[&:not(:first-child)]:border-l sm:[&:not(:first-child)]:border-t-0"
+              className="group relative cursor-default overflow-hidden bg-surface px-8 py-10 text-center transition-colors duration-300 hover:bg-brand sm:text-left"
             >
               {/* lime bar sweeps in along the bottom */}
               <span
